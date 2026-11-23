@@ -1,519 +1,768 @@
 <!doctype html>
-<html lang="en" data-type="product" data-radius="soft" data-buttons="arrow" data-motion>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Glint: a clear sonic toothbrush with refills by post</title>
-<meta name="description" content="A sonic toothbrush with a clear crystal handle, a 90-day battery and new heads posted every three months. $49, with a 30-day money-back guarantee.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Glint: a clear sonic toothbrush with refills by post">
-<meta property="og:description" content="31,000 strokes a minute, a 90-day battery and new heads in the post. $49.">
-<meta property="og:image" content="share.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#cbe4f2">
-<!-- <link rel="canonical" href="https://[the client's domain]/"> -->
-<meta name="site-kind" content="other">
-<meta name="page-type" content="product">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glint — The Sonic Toothbrush That Ends the Dentist Lecture</title>
+<meta name="description" content="Brushing twice a day and still getting the lecture? Glint is a $49 sonic toothbrush built by an ex-Google and an ex-NASA engineer, with fresh heads by mail and a 30-day money-back guarantee.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Besley:wght@400..700&family=Albert+Sans:wght@400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --p-bg: #cbe4f2; --p-surface: #bcdcee; --p-ink: #0a0a0a; --p-muted: #44606e;
-  --p-accent: #b0298f; --p-accent-ink: #ffffff; --p-action: #b0298f; --p-action-ink: #ffffff;
-  --p-inv-bg: #0a0a0a; --p-inv-surface: #151616; --p-inv-ink: #cbe4f2; --p-inv-muted: #79878f;
-  --p-inv-accent: #b0298f; --p-inv-accent-ink: #ffffff; --p-inv-action: #b0298f; --p-inv-action-ink: #ffffff;
-  --font-display: "Besley", Georgia, serif;
-  --font-text: "Albert Sans", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.02em;
-  --display-tracking-xl: -0.026em;
-}
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js">
-<link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/photo-chapters/moment.js">
-<!-- page CSS: inside visuals only (the hero gallery, the price lists, the brush cursor) -->
-<style>
-  /* hero gallery: one large photograph, four thumbnails that swap it on a click */
-  .gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--gutter); height: 100%; min-height: 0; }
-  .gallery__main { grid-column: span 5; }
-  .gallery__thumbs { grid-column: span 1; }
-  .gallery__main { margin: 0; position: relative; border-radius: var(--r-lg); overflow: clip; background: var(--surface); min-height: 0; }
-  .gallery__main img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .gallery__thumbs { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: var(--s-4); min-height: 0; margin: 0; padding: 0; list-style: none; }
-  .gallery__thumbs button { all: unset; box-sizing: border-box; display: block; width: 100%; height: 100%; border-radius: var(--r-md); overflow: clip; outline: 2px solid transparent; outline-offset: 2px; transition: outline-color var(--dur) var(--ease); }
-  .gallery__thumbs button[aria-pressed="true"] { outline-color: var(--ink); }
-  .gallery__thumbs button:focus-visible { outline-color: var(--action); }
-  .gallery__thumbs img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease); }
-  .gallery__thumbs button:hover img { transform: scale(1.03); }
-  @media (max-width: 1023px) {
-    .gallery { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; row-gap: var(--s-4); }
-    .gallery__main, .gallery__thumbs { grid-column: 1 / -1; }
-    .gallery__thumbs { grid-template-rows: none; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .gallery__thumbs button { aspect-ratio: 1; height: auto; }
+  :root {
+    --bg: #12201e;
+    --bg-2: #182a27;
+    --line: rgba(236, 231, 222, 0.11);
+    --ink: #ece7de;
+    --muted: #a3b1ab;
+    --mint: #8fd3b6;
+    --mint-deep: #5fae8e;
+    --coral: #e9a48f;
+    --radius: 22px;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Inter", system-ui, sans-serif;
   }
-  @media (max-width: 639px) { .gallery__thumbs { gap: var(--s-2); } .gallery__thumbs button { aspect-ratio: 4 / 3; } }
-
-  /* the four people: one large frame, two squares and one wide frame beside it */
-  .people { grid-template-rows: 480px; }
-  .people > .frame { margin: 0; height: 100%; border-radius: var(--r-lg); overflow: clip; }
-  .people > .frame img { width: 100%; height: 100%; object-fit: cover; }
-  @media (min-width: 640px) and (max-width: 1023px) { #inside, #pricing { --h: 2; } .people { grid-template-rows: 480px; } }
-  @media (min-width: 1024px) and (max-width: 1279px) { .hero h1 { font-size: 46px; } }
-  @media (max-width: 639px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 240px 200px; } .people > .frame:first-child { grid-column: 1 / -1 !important; }
-    .people > .frame { grid-column: auto !important; }
-    #inside .tile { grid-template-columns: 45% minmax(0, 1fr); column-gap: var(--s-4); row-gap: var(--s-1); }
-    #inside .tile__media { grid-row: span 2; --tile-ratio: 1; } #inside .grid { grid-template-columns: 1fr; row-gap: var(--s-5); } #inside .tile { grid-column: 1 / -1; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(143, 211, 182, 0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, rgba(233, 164, 143, 0.07), transparent 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  @media (pointer: fine) {
+    html.brush-on, html.brush-on * { cursor: none !important; }
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
   }
 
-  /* price cards: bullets with icons */
-  #pricing .price { font: var(--display-weight) var(--t-h2)/1 var(--font-display); letter-spacing: var(--display-tracking); margin: var(--s-2) 0 0; }
-  #pricing .price small { font: 400 var(--t-body)/1.4 var(--font-text); letter-spacing: 0; }
-  .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
-  .ticks li { display: flex; gap: var(--s-3); align-items: center; }
-  .ticks svg { flex: none; width: 20px; height: 20px; }
-  #pricing .card { display: flex; flex-direction: column; gap: var(--s-4); }
-  #pricing .card .btn { margin-top: auto; align-self: start; }
-  #pricing .frame__img { object-fit: cover; }
-
-  .reviews__photo { display: none; }
-  @media (max-width: 639px) { .pricing__photo { --ratio: 190% !important; } }
-  @media (max-width: 639px) { .reviews__photo { display: block; margin: var(--s-6) 0 0; height: 300px; border-radius: var(--r-lg); overflow: clip; } .reviews__photo img { width: 100%; height: 100%; object-fit: cover; } }
-  /* the awards row under the reviews */
-  .awards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter); margin-top: var(--s-10); }
-  .award { display: flex; gap: var(--s-3); align-items: center; }
-  .award svg { flex: none; width: 44px; height: 44px; color: var(--action); }
-  .award b { display: block; font-weight: 500; }
-  .award span { font-size: var(--t-small); color: var(--muted); }
-  @media (max-width: 1023px) { .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
-  /* brush cursor and its meter */
-  @media (pointer: fine) { html.brush-on, html.brush-on * { cursor: none !important; } }
-  #brush { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; width: 0; height: 0; opacity: 0; transition: opacity .2s; }
-  #brush.show { opacity: 1; }
-  #brush img { position: absolute; display: block; max-width: none; filter: drop-shadow(0 6px 10px rgba(10, 30, 45, .35)); }
-  #fx { position: fixed; inset: 0; z-index: 99; pointer-events: none; }
-  .brushmeter { display: flex; align-items: center; gap: var(--s-3); font-size: var(--t-small); margin-right: var(--s-5); }
-  .brushmeter__bar { width: 88px; height: 6px; border-radius: 99px; background: var(--surface); overflow: hidden; }
-  .brushmeter__bar i { display: block; height: 100%; width: 0; background: var(--action); border-radius: inherit; }
-  .brushmeter button { all: unset; cursor: pointer; padding: 0 12px; min-height: 44px; display: inline-flex; align-items: center; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
-  .brushmeter button:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
-  .brushmeter__label { min-width: 104px; font-weight: 500; }
-  @media (max-width: 1023px) { .brushmeter { display: none; } }
+  /* ---------- brushable text ---------- */
   .w { white-space: nowrap; }
+  .ch { transition: none; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(18, 32, 30, 0.72);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
+  .logo {
+    font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .logo-mark {
+    width: 26px; height: 26px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--mint), var(--mint-deep));
+    display: grid; place-items: center; color: var(--bg); font-size: 15px;
+  }
+  .nav-links { display: flex; gap: 24px; font-size: 15px; color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+  .shine-meter {
+    font-size: 13px; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .shine-meter b { color: var(--mint); font-weight: 600; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font: 600 15px/1 var(--body); padding: 14px 22px; border-radius: 999px;
+    border: 1px solid transparent; background: none; color: inherit;
+  }
+  .btn-primary { background: var(--mint); color: #0e211b; }
+  .btn-primary:hover { background: #a9e0c8; }
+  .btn-ghost { border-color: var(--line); }
+  .btn-ghost:hover { border-color: rgba(223, 239, 236, 0.35); }
+  .btn-sm { padding: 10px 16px; font-size: 14px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 88px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; gap: 8px; align-items: center;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--mint);
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 12px var(--mint); }
+  h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(42px, 5.6vw, 76px); line-height: 1; letter-spacing: -0.035em;
+    margin: 18px 0 22px;
+  }
+  .lede { font-size: 20px; max-width: 34ch; margin: 0 0 32px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hint { margin-top: 28px; font-size: 14px; color: var(--muted); max-width: 46ch; }
+  .hint kbd {
+    font: 600 12px var(--body); color: var(--mint); border: 1px solid rgba(143, 211, 182, 0.35);
+    padding: 2px 7px; border-radius: 6px; white-space: nowrap;
+  }
+  .hero-art {
+    position: relative; aspect-ratio: 1 / 1.08; border-radius: 32px;
+    background:
+      radial-gradient(60% 50% at 50% 40%, rgba(143, 211, 182, 0.28), transparent 70%),
+      linear-gradient(160deg, #1c332f, #14241f);
+    border: 1px solid var(--line);
+    display: grid; place-items: center; overflow: hidden;
+  }
+  .hero-gallery { display: grid; gap: 12px; }
+  .hero-art .hero-main { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .gallery-thumbs button { padding: 0; border: 2px solid transparent; border-radius: 14px; overflow: hidden; background: none; aspect-ratio: 1; transition: border-color .2s, transform .2s; }
+  .gallery-thumbs button:hover { transform: translateY(-2px); }
+  .gallery-thumbs button[aria-pressed="true"] { border-color: var(--mint); }
+  .gallery-thumbs button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+  .gallery-thumbs img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .tag {
+    position: absolute; background: rgba(18, 32, 30, 0.8); border: 1px solid var(--line);
+    backdrop-filter: blur(8px); border-radius: 14px; padding: 10px 14px; font-size: 14px;
+  }
+  .tag strong { display: block; font-family: var(--display); font-size: 22px; line-height: 1.1; }
+  .tag.t1 { top: 5%; left: 5%; }
+  .tag.t2 { bottom: 5%; right: 5%; }
+
+  /* ---------- logos strip ---------- */
+  .press { border-block: 1px solid var(--line); padding: 26px 0; }
+  .press .wrap { display: flex; flex-wrap: wrap; gap: 14px 44px; align-items: center; justify-content: center; }
+  .press span.q { font-family: var(--display); font-weight: 700; font-size: 19px; color: var(--muted); }
+
+  /* ---------- sections ---------- */
+  section.block { padding: 104px 0; }
+  .section-head { max-width: 680px; margin-bottom: 52px; }
+  h2 {
+    font-family: var(--display); font-weight: 800; font-size: clamp(36px, 4.8vw, 60px);
+    line-height: 1.02; letter-spacing: -0.03em; margin: 14px 0 16px;
+  }
+  h3 { font-family: var(--display); font-weight: 700; font-size: 24px; letter-spacing: -0.01em; margin: 0 0 10px; line-height: 1.15; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 30px;
+  }
+  .card p { margin: 0; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 14px; margin-bottom: 22px;
+    display: grid; place-items: center; background: rgba(143, 211, 182, 0.12); color: var(--mint);
+  }
+  .icon svg { width: 24px; height: 24px; }
+
+  /* steps */
+  .steps { counter-reset: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { border-top: 2px solid var(--line); padding-top: 24px; }
+  .step::before {
+    counter-increment: s; content: "0" counter(s);
+    display: block; font: 700 14px var(--display); color: var(--mint); margin-bottom: 14px; letter-spacing: 0.06em;
+  }
+
+  /* pricing */
+  .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .plan { padding: 38px; }
+  .plan.featured { border-color: rgba(143, 211, 182, 0.45); background: linear-gradient(180deg, rgba(143,211,182,0.08), rgba(143,211,182,0.01)); }
+  .price { font-family: var(--display); font-weight: 800; font-size: 64px; letter-spacing: -0.03em; line-height: 1; margin: 18px 0 6px; }
+  .price small { font-size: 20px; font-weight: 600; letter-spacing: 0; }
+  .plan ul { list-style: none; padding: 0; margin: 24px 0 30px; display: grid; gap: 10px; }
+  .plan li { display: flex; gap: 12px; align-items: center; }
+  .li-icon { flex: none; width: 30px; height: 30px; padding: 6px; border-radius: 9px; background: rgba(143,211,182,.12); color: var(--mint); }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; background: var(--mint); color: #0e211b; }
+
+  /* reviews */
+  .review blockquote { margin: 0 0 22px; font-size: 19px; line-height: 1.5; }
+  .review .who { font-size: 14px; color: var(--muted); }
+  .stars { color: var(--coral); letter-spacing: 3px; margin-bottom: 16px; }
+
+  /* awards */
+  .awards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .award { text-align: center; padding: 30px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, rgba(242,198,109,0.06), transparent); }
+  .award .laurel { width: 64px; height: 64px; color: #f2c66d; margin-bottom: 14px; }
+  .award h3 { font-size: 19px; margin-bottom: 4px; }
+  .award p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  /* guarantee */
+  .guarantee { margin-top: 20px; display: flex; gap: 26px; align-items: center; padding: 28px 32px; border-radius: var(--radius); border: 1px dashed rgba(143, 211, 182, 0.45); background: rgba(143,211,182,0.04); }
+  .guarantee p { margin: 0; }
+  .seal { flex: none; width: 92px; height: 92px; border-radius: 50%; display: grid; place-content: center; text-align: center; font: 700 12px var(--body); letter-spacing: .14em; color: #0e211b; background: radial-gradient(circle, var(--mint) 58%, var(--mint-deep) 60%, var(--mint) 64%); box-shadow: 0 0 30px rgba(143,211,182,.3); }
+  .seal span { display: block; font: 800 34px/1 var(--display); letter-spacing: -.02em; }
+
+  /* packaging + people */
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .shot { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,0.02); }
+  .shot img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+  .shot figcaption { padding: 20px 22px 24px; }
+  .shot figcaption p { margin: 0; color: var(--muted); font-size: 15px; }
+  .thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .thumb { margin: 0; position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+  .thumb img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; transition: transform .4s; }
+  .thumb:hover img { transform: scale(1.04); }
+  .thumb figcaption { position: absolute; left: 10px; bottom: 10px; font-size: 13px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: rgba(10,26,34,.78); backdrop-filter: blur(6px); }
+
+  /* cta */
+  .cta {
+    text-align: center; border-radius: 36px; padding: 88px 24px;
+    background: radial-gradient(70% 90% at 50% 0%, rgba(143, 211, 182, 0.18), transparent 70%), var(--bg-2);
+    border: 1px solid var(--line);
+  }
+  .cta h2 { margin-inline: auto; max-width: 16ch; }
+  .cta p { margin: 0 auto 30px; max-width: 46ch; }
+
+  footer { padding: 56px 0 140px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+  /* ---------- brush cursor ---------- */
+  #brush {
+    position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none;
+    width: 0; height: 0; opacity: 0; transition: opacity .2s;
+  }
+  #brush.show { opacity: 1; }
+  #brush img { position: absolute; display: block; max-width: none; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.5)) drop-shadow(0 0 1px rgba(255,255,255,.6)); }
+  #fx { position: fixed; inset: 0; z-index: 99; pointer-events: none; }
+
+  /* ---------- HUD ---------- */
+  .hud {
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 50;
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(16, 28, 26, 0.86); backdrop-filter: blur(14px);
+    border: 1px solid var(--line); border-radius: 999px; padding: 10px 10px 10px 22px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    max-width: calc(100% - 32px);
+  }
+  .hud-label { font-size: 13px; font-weight: 600; min-width: 150px; white-space: nowrap; transition: color .2s; }
+  .hud.hot .hud-label { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.8); }
+  .bar { width: 140px; height: 8px; border-radius: 99px; background: rgba(255,255,255,0.08); overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--mint-deep), var(--mint), #fff); }
+  .hud .btn { padding: 9px 14px; font-size: 13px; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .hero .wrap, .pricing { grid-template-columns: 1fr; }
+    .grid-3, .steps, .shots { grid-template-columns: 1fr; }
+    .awards, .thumbs { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hero { padding-top: 56px; }
+    .hero-gallery { max-width: 520px; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .shine-meter { display: none; }
+    .hud { gap: 10px; padding-left: 16px; bottom: 12px; }
+    .hud-label { min-width: 0; font-size: 12px; }
+    .bar { width: 64px; }
+    .hud .clean-all { display: none; }
+    section.block { padding: 72px 0; }
+    .plan { padding: 28px; }
+    .guarantee { flex-direction: column; align-items: flex-start; padding: 24px; }
+  }
 </style>
 </head>
 <body>
-<!-- type: product (a sonic toothbrush sold online; site-kind other)
-     deal: hero photo, overridden to a click gallery because the client asked for a hero gallery;
-     nav nav-cards, close close-photo, footer footer-columns, rhythm brand-band dealt, changed to dark-band (#pricing) because white on the raspberry accent reads 5.4:1, under the 7:1 body text needs, buttons arrow, mark wordmark
-     palette sky-sand: a pale sky-blue ground like a clean bathroom tile, with the raspberry of the brush's power ring as the one accent
-     type besley (Besley / Albert Sans) · moments: photo-chapters in #packaging
-     the brush cursor that cleans the copy is the client's own concept, kept on purpose -->
-<header class="nav">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top">Glint</a>
-    <nav class="nav__links" aria-label="Main">
-      <div class="nav__item">
-        <a class="nav__link" href="#inside">Brush <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <a class="menu-card span-4" href="#inside">
-              <div class="panel"><img class="frame__img" src="img/f2-inside.jpg" alt="The motor and circuit board seen through the clear handle" loading="lazy"></div>
-              <span class="t-card">The parts inside</span>
-              <span class="t-small muted">Motor, coil and battery you can see</span>
-            </a>
-            <a class="menu-card span-4" href="#packaging">
-              <div class="panel"><img class="frame__img" src="img/pk3-flatlay.jpg" alt="Everything in the box laid out" loading="lazy"></div>
-              <span class="t-card">What comes in the box</span>
-              <span class="t-small muted">Brush, travel case, cable and two heads</span>
-            </a>
-            <a class="menu-card span-4" href="#pricing">
-              <div class="panel"><img class="frame__img" src="img/pr-heads.jpg" alt="The brush beside two spare heads" loading="lazy"></div>
-              <span class="t-card">Prices and refills</span>
-              <span class="t-small muted">$49, then $6 a quarter for heads</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#people">People</a></div>
-      <div class="nav__item"><a class="nav__link" href="#packaging">Packaging</a></div>
-      <div class="nav__item"><a class="nav__link" href="#pricing">Prices</a></div>
-      <div class="nav__item"><a class="nav__link" href="#reviews">Reviews</a></div>
-    </nav>
-    <div class="nav__actions">
-      <div class="brushmeter" role="group" aria-label="Brushing">
-        <span class="brushmeter__label" id="hudLabel">Move to brush</span>
-        <span class="brushmeter__bar" aria-hidden="true"><i id="powerBar"></i></span>
-        <button type="button" id="restain">Stain again</button>
-      </div>
-      <a class="btn btn--primary" href="#pricing">Buy the brush</a>
+
+
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><span class="logo-mark">✦</span><span data-brush>Glint</span></a>
+    <div class="nav-links">
+      <a href="#why" data-brush>Why Glint</a>
+      <a href="#how" data-brush>How it works</a>
+      <a href="#packaging" data-brush>Packaging</a>
+      <a href="#pricing" data-brush>Pricing</a>
+      <a href="#reviews" data-brush>Reviews</a>
     </div>
-    <canvas id="fx" aria-hidden="true"></canvas>
-        <div id="brush" aria-hidden="true"><img src="img/brush-cursor.png" alt="" width="61" height="400"></div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+    <div class="nav-right">
+      <span class="shine-meter" aria-live="off">Page shine: <b id="shinePct">0%</b></span>
+      <a href="#pricing" class="btn btn-primary btn-sm">Get yours</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1 data-brush>Brushing twice a day and still getting the lecture?</h1>
+      <p class="lede" data-brush>It’s not you. It’s the brush. An ex-Google engineer and an ex-NASA engineer built Glint to reach the spots your hand keeps missing, so your next checkup goes very differently.</p>
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary">Get Glint for $49</a>
+        <a href="#why" class="btn btn-ghost"><span data-brush>Why it works</span></a>
+      </div>
+      <p class="hint">Look how stained this page is. Grab the brush and scrub it clean. <kbd>Go fast</kbd> to whiten it.</p>
+    </div>
+    <div class="hero-gallery" data-gallery>
+      <div class="hero-art">
+        <img class="hero-main" src="img/g1-studio.jpg" alt="The Glint sonic toothbrush standing upright, matte white with a mint button" width="1120" height="1400" fetchpriority="high">
+        <div class="tag t1"><strong>31,000</strong>strokes / min</div>
+        <div class="tag t2"><strong>30-day</strong>money-back guarantee</div>
+      </div>
+      <div class="gallery-thumbs" role="group" aria-label="More photos of Glint">
+        <button type="button" aria-pressed="true" aria-label="Show the brush standing" data-src="img/g1-studio.jpg" data-alt="The Glint sonic toothbrush standing upright, matte white with a mint button"><img src="img/g1-studio.jpg" alt="" width="1120" height="1400"></button>
+        <button type="button" aria-pressed="false" aria-label="Show the brush in a hand" data-src="img/g2-hand.jpg" data-alt="A hand holding the Glint toothbrush in a bathroom"><img src="img/g2-hand.jpg" alt="" width="1120" height="1400" loading="lazy"></button>
+        <button type="button" aria-pressed="false" aria-label="Show the brush in its charging stand" data-src="img/g3-stand.jpg" data-alt="Glint in its charging stand on a marble bathroom counter"><img src="img/g3-stand.jpg" alt="" width="1120" height="1400" loading="lazy"></button>
+        <button type="button" aria-pressed="false" aria-label="Show a close-up of the brush head" data-src="img/g4-head.jpg" data-alt="Close-up of the Glint brush head with white and mint bristles"><img src="img/g4-head.jpg" alt="" width="1120" height="1400" loading="lazy"></button>
+      </div>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
-    <div class="wrap">
-      <div class="hero-text grid hero-split">
-        <div class="hero-copy span-6">
-          <h1 id="hero-h" data-brush>A clear sonic toothbrush, refills by post</h1>
-          <p class="t-lead" data-brush>Designed by an ex-Google engineer and an ex-NASA engineer. 31,000 strokes a minute, a 90-day battery and a new head in the post every three months.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="#pricing">Buy the brush<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-            <a class="btn btn--secondary" href="#inside">See the parts</a>
-          </div>
-          <p class="t-small muted" data-brush>The copy on this page needs a clean. Run the brush over it, and keep going fast to whiten it.</p>
-          <dl class="hero-facts">
-            <div><dt>Price</dt><dd data-brush>$49</dd></div>
-            <div><dt>Battery</dt><dd data-brush>90 days a charge</dd></div>
-            <div><dt>Guarantee</dt><dd data-brush>30-day money back</dd></div>
-          </dl>
-        </div>
-        <div class="hero-visual span-6 start-7">
-          <div class="gallery" data-gallery>
-            <figure class="gallery__main"><img src="img/g1-studio.jpg" alt="The Glint brush standing upright, its motor and battery visible through the clear handle" fetchpriority="high" width="1120" height="1400" data-source="client" data-subject="the toothbrush"></figure>
-            <ul class="gallery__thumbs" aria-label="More photographs of the brush">
-              <li><button type="button" aria-pressed="true" aria-label="Show the brush standing upright" data-src="img/g1-studio.jpg" data-alt="The Glint brush standing upright, its motor and battery visible through the clear handle"><img src="img/g1-studio.jpg" alt="" width="1120" height="1400"></button></li>
-              <li><button type="button" aria-pressed="false" aria-label="Show the brush on a stone counter" data-src="img/g2-counter.jpg" data-alt="The brush lying on a grey stone bathroom counter with drops of water"><img src="img/g2-counter.jpg" alt="" width="1120" height="1400" loading="lazy"></button></li>
-              <li><button type="button" aria-pressed="false" aria-label="Show the brush in a hand" data-src="img/g3-hand.jpg" data-alt="A hand holding the brush, thumb on the raspberry power ring"><img src="img/g3-hand.jpg" alt="" width="1120" height="1400" loading="lazy"></button></li>
-              <li><button type="button" aria-pressed="false" aria-label="Show the brush in its charging dock" data-src="img/g4-dock.jpg" data-alt="The brush in its clear charging dock on a bathroom shelf"><img src="img/g4-dock.jpg" alt="" width="1120" height="1400" loading="lazy"></button></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="inside" aria-labelledby="inside-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="inside-h" data-brush>The parts inside Glint. <span class="muted">The clear handle shows the motor, coil and battery.</span></h2>
-      </div>
-      <div class="grid">
-        <article class="tile span-4">
-          <div class="tile__media"><img src="img/f2-inside.jpg" alt="The steel motor, copper coil and circuit board inside the faceted crystal handle" width="1200" height="896"></div>
-          <div class="tile__head"><h3 data-brush>Brushless motor at 31,000 strokes</h3></div>
-          <p data-brush>A brushless motor tuned by our NASA engineer, quiet enough to use while the house sleeps.</p>
-        </article>
-        <article class="tile span-4">
-          <div class="tile__media"><img src="img/f1-head.jpg" alt="Close up of the brush head, white and raspberry bristles with drops of water" width="1200" height="896"></div>
-          <div class="tile__head"><h3 data-brush>Heads that last 3 months</h3></div>
-          <p data-brush>Soft, end-rounded bristles. The raspberry tufts fade when the head is ready to change.</p>
-        </article>
-        <article class="tile span-4">
-          <div class="tile__media"><img src="img/f3-travel.jpg" alt="The brush in its open clear travel case on folded linen in a suitcase" width="1200" height="896"></div>
-          <div class="tile__head"><h3 data-brush>One charge for 90 days</h3></div>
-          <p data-brush>One USB-C charge lasts 90 days, so a two-week trip never needs the cable.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="people" aria-labelledby="people-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="people-h" data-brush>A toothbrush for ages 7 to 78</h2>
-        <p data-brush>Light enough for small hands, easy to grip for stiff ones.</p>
-      </div>
-      <div class="grid people">
-        <figure class="frame frame--photo span-6"><img class="frame__img" src="img/use-kid.jpg" alt="A girl of about seven brushing her teeth with Glint, her mother smiling beside her" loading="lazy" width="900" height="900"></figure>
-        <figure class="frame frame--photo span-3"><img class="frame__img" src="img/use-grandma.jpg" alt="A woman in her late seventies with silver hair brushing her teeth with Glint" loading="lazy" width="900" height="900"></figure>
-        <figure class="frame frame--photo span-3"><img class="frame__img" src="img/use-coffee.jpg" alt="A man in a bathrobe brushing his teeth with Glint, an espresso in his other hand" loading="lazy" width="900" height="900"></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="packaging" data-moment="photo-chapters" aria-labelledby="packaging-h">
-    <div class="wrap mo-ph">
-      <div class="mo-ph__head"><h2 id="packaging-h">Packaging in 4 parts, all paper</h2><p>Card and pulp fibre only, with no plastic to throw away.</p></div>
-      <ol class="mo-ph__list">
-        <li class="mo-ph__ch">
-          <figure class="mo-ph__pic"><img src="img/pk1-closed.jpg" alt="The pale blue Glint box closed, a raspberry band round it" width="1920" height="1275"></figure>
-          <h3>A box sized for the post</h3>
-          <p>It fits through a letterbox, so nobody has to be home when it arrives.</p>
-        </li>
-        <li class="mo-ph__ch">
-          <figure class="mo-ph__pic"><img src="img/pk2-open.jpg" alt="The box open with its lid beside it, the brush resting on a raspberry fibre tray" width="1920" height="1275"></figure>
-          <h3>The brush on a fibre tray</h3>
-          <p>The tray is moulded from paper pulp and goes in the recycling with the box.</p>
-        </li>
-        <li class="mo-ph__ch">
-          <figure class="mo-ph__pic"><img src="img/pk3-flatlay.jpg" alt="Everything in the box laid out: brush, clear travel case, raspberry cable, two heads and a card" width="1920" height="1275"></figure>
-          <h3>Six things inside</h3>
-          <p>The brush, a clear travel case, a USB-C cable, two spare heads and a card on how to start.</p>
-        </li>
-        <li class="mo-ph__ch">
-          <figure class="mo-ph__pic"><img src="img/pk4-mailer.jpg" alt="A flat blue Glint refill mailer coming through a letterbox, two heads behind its window" width="1920" height="1275"></figure>
-          <h3>Refills every three months</h3>
-          <p>Two heads in a flat mailer. Pause or cancel from your account at any time.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section ground-inverse" id="pricing" style="--hm: 2" aria-labelledby="pricing-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="pricing-h" data-brush>Prices for the brush and refills. <span class="muted">30-day money-back guarantee.</span></h2>
-      </div>
-      <div class="grid">
-        <div class="frame frame--photo span-4 pricing__photo" style="--ratio: 125%"><img class="frame__img" src="img/pr-heads.jpg" alt="The brush lying beside two spare heads on a pale blue surface" loading="lazy" width="960" height="1200"></div>
-        <article class="card span-4">
-          <h3 data-brush>The brush</h3>
-          <p class="price" data-brush>$49</p>
-          <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 14 10M15 4l5 5-4 4-5-5z"/></svg><span data-brush>Sonic brush and one head</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="3"/><path d="M8 8V6h8v2"/></svg><span data-brush>Clear travel charging case</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-brush>Two-year warranty</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11A8 8 0 0 0 6 6L4 8M4 4v4h4M4 13a8 8 0 0 0 14 5l2-2M20 20v-4h-4"/></svg><span data-brush>30-day money-back guarantee</span></li>
-          </ul>
-          <a class="btn btn--secondary" href="mailto:orders@glint.example?subject=The%20brush">Order the brush</a>
-        </article>
-        <article class="card span-4">
-          <h3 data-brush>The brush with refills</h3>
-          <p class="price" data-brush>$49 <small>then $6 every three months</small></p>
-          <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 14 10M15 4l5 5-4 4-5-5z"/></svg><span data-brush>Everything in the brush</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><span data-brush>Two new heads posted each quarter</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9c-2.8 0-4 1.6-4 3s1.2 3 4 3c3.5 0 6.5-6 10-6 2.8 0 4 1.6 4 3s-1.2 3-4 3c-3.5 0-6.5-6-10-6z"/></svg><span data-brush>Warranty for as long as you stay</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg><span data-brush>Pause or cancel at any time</span></li>
-          </ul>
-          <a class="btn btn--secondary" href="mailto:orders@glint.example?subject=The%20brush%20with%20refills">Order with refills</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews" style="--hm: 2" aria-labelledby="reviews-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="reviews-h" data-brush>Reviews from parents, grandparents and coffee drinkers</h2>
-      </div>
-      <div class="grid">
-        <figure class="quote span-4">
-          <blockquote data-brush>My kids used to fight me at bedtime. Now they race to brush first, because the clear handle looks like a spaceship.</blockquote>
-          <div class="person"><img src="img/av-priya.jpg" alt="Anjali" width="40" height="40" loading="lazy"><span><span class="person__name" data-brush>Anjali</span><span class="person__role" data-brush>Mother of two, Brooklyn</span></span></div>
-        </figure>
-        <figure class="quote span-4">
-          <blockquote data-brush>I’m 78 with arthritis in both hands. Glint is light, easy to hold, and my dentist says my gums look better than in years.</blockquote>
-          <div class="person"><img src="img/av-dorothy.jpg" alt="Dorothy" width="40" height="40" loading="lazy"><span><span class="person__name" data-brush>Dorothy</span><span class="person__role" data-brush>Retired teacher, Tucson</span></span></div>
-        </figure>
-        <figure class="quote span-4">
-          <blockquote data-brush>Five espressos a day and I won’t quit. Two weeks with Glint and the coffee stains were gone.</blockquote>
-          <div class="person"><img src="img/av-marcus.jpg" alt="Teo" width="40" height="40" loading="lazy"><span><span class="person__name" data-brush>Teo</span><span class="person__role" data-brush>Coffee drinker, Austin</span></span></div>
-        </figure>
-      </div>
-      <figure class="reviews__photo"><img src="img/use-morning.jpg" alt="A young woman with curly hair laughing as she brushes her teeth with Glint" loading="lazy" width="900" height="900"></figure>
-      <div class="awards" aria-label="Awards">
-        <div class="award"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 40C7 34 6 22 11 12M33 40c8-6 9-18 4-28"/><path d="M11 17c-3-1-5-3-5-6 3 0 5 3 5 6zM9 25c-3 0-5-2-6-5 3 0 6 2 6 5zM11 33c-3 1-6-1-6-3 3-1 5 1 6 3zM37 17c3-1 5-3 5-6-3 0-5 3-5 6zM39 25c3 0 5-2 6-5-3 0-6 2-6 5zM37 33c3 1 6-1 6-3-3-1-5 1-6 3z"/><path d="M24 14l2.6 5.3 5.8.8-4.2 4 1 5.8L24 27.2l-5.2 2.7 1-5.8-4.2-4 5.8-.8z" fill="currentColor" stroke="none"/></svg><div><b data-brush>Design Excellence Award</b><span data-brush>Gold, product design 2026</span></div></div>
-        <div class="award"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 40C7 34 6 22 11 12M33 40c8-6 9-18 4-28"/><path d="M11 17c-3-1-5-3-5-6 3 0 5 3 5 6zM9 25c-3 0-5-2-6-5 3 0 6 2 6 5zM11 33c-3 1-6-1-6-3 3-1 5 1 6 3zM37 17c3-1 5-3 5-6-3 0-5 3-5 6zM39 25c3 0 5-2 6-5-3 0-6 2-6 5zM37 33c3 1 6-1 6-3-3-1-5 1-6 3z"/><path d="M24 14l2.6 5.3 5.8.8-4.2 4 1 5.8L24 27.2l-5.2 2.7 1-5.8-4.2-4 5.8-.8z" fill="currentColor" stroke="none"/></svg><div><b data-brush>Innovation in Oral Care</b><span data-brush>Best new device 2026</span></div></div>
-        <div class="award"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 40C7 34 6 22 11 12M33 40c8-6 9-18 4-28"/><path d="M11 17c-3-1-5-3-5-6 3 0 5 3 5 6zM9 25c-3 0-5-2-6-5 3 0 6 2 6 5zM11 33c-3 1-6-1-6-3 3-1 5 1 6 3zM37 17c3-1 5-3 5-6-3 0-5 3-5 6zM39 25c3 0 5-2 6-5-3 0-6 2-6 5zM37 33c3 1 6-1 6-3-3-1-5 1-6 3z"/><path d="M24 14l2.6 5.3 5.8.8-4.2 4 1 5.8L24 27.2l-5.2 2.7 1-5.8-4.2-4 5.8-.8z" fill="currentColor" stroke="none"/></svg><div><b data-brush>Smart Home Gadget Awards</b><span data-brush>Editor’s choice 2026</span></div></div>
-        <div class="award"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 40C7 34 6 22 11 12M33 40c8-6 9-18 4-28"/><path d="M11 17c-3-1-5-3-5-6 3 0 5 3 5 6zM9 25c-3 0-5-2-6-5 3 0 6 2 6 5zM11 33c-3 1-6-1-6-3 3-1 5 1 6 3zM37 17c3-1 5-3 5-6-3 0-5 3-5 6zM39 25c3 0 5-2 6-5-3 0-6 2-6 5zM37 33c3 1 6-1 6-3-3-1-5 1-6 3z"/><path d="M24 14l2.6 5.3 5.8.8-4.2 4 1 5.8L24 27.2l-5.2 2.7 1-5.8-4.2-4 5.8-.8z" fill="currentColor" stroke="none"/></svg><div><b data-brush>Sustainable Packaging Prize</b><span data-brush>Winner 2026</span></div></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer closing" id="contact" aria-labelledby="close-h">
+<div class="press">
   <div class="wrap">
-    <div class="closing__cta close--photo">
-      <div class="section-head--split">
-        <div><h2 id="close-h" data-brush>Buy the brush</h2><p class="t-lead" data-brush>$49 with free shipping and a 30-day money-back guarantee.</p></div>
-        <a class="btn btn--primary" href="#pricing">Buy the brush<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      </div>
-      <div class="close__media"><img src="img/close-window.jpg" alt="The brush standing in a glass on a sunny windowsill" loading="lazy" width="1920" height="1086" data-source="client" data-subject="the toothbrush"></div>
+    <span class="q" data-brush>“My hygienist asked what I changed.”</span>
+    <span class="q" data-brush>“Two minutes that actually count.”</span>
+    <span class="q" data-brush>“The last toothbrush you’ll buy.”</span>
+  </div>
+</div>
+
+<section class="block awards-block" id="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Awards</span>
+      <h2 data-brush>The judges were impressed. Your dentist will be too.</h2>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top">Glint</a>
-          <p class="footer__lede">A clear sonic toothbrush, with new heads by post.</p>
-        </div>
-        <div class="span-2 footer__col"><h3>Brush</h3><ul><li><a href="#inside">Parts</a></li><li><a href="#people">People</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Box</h3><ul><li><a href="#packaging">Packaging</a></li><li><a href="#pricing">Prices</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Proof</h3><ul><li><a href="#reviews">Reviews</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Help</h3><ul><li><a href="mailto:hello@glint.example">Email us</a></li></ul></div>
+    <div class="awards">
+      <div class="award"><svg class="laurel" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 52C10 44 8 30 14 16M44 52c10-8 12-22 6-36"/><path d="M14 22c-4-1-6-4-6-7 4 0 6 3 6 7zM12 32c-4 0-7-3-7-6 4-.5 7 2 7 6zM14 42c-4 1-7-1-8-4 4-1 7 1 8 4zM50 22c4-1 6-4 6-7-4 0-6 3-6 7zM52 32c4 0 7-3 7-6-4-.5-7 2-7 6zM50 42c4 1 7-1 8-4-4-1-7 1-8 4z"/><path d="M32 18l3.5 7 7.5 1-5.5 5.2 1.4 7.6L32 35.3 25.1 38.8l1.4-7.6L21 26l7.5-1z" fill="currentColor" stroke="none"/></svg><h3 data-brush>Design Excellence Award</h3><p data-brush>Gold · Product Design 2026</p></div>
+      <div class="award"><svg class="laurel" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 52C10 44 8 30 14 16M44 52c10-8 12-22 6-36"/><path d="M14 22c-4-1-6-4-6-7 4 0 6 3 6 7zM12 32c-4 0-7-3-7-6 4-.5 7 2 7 6zM14 42c-4 1-7-1-8-4 4-1 7 1 8 4zM50 22c4-1 6-4 6-7-4 0-6 3-6 7zM52 32c4 0 7-3 7-6-4-.5-7 2-7 6zM50 42c4 1 7-1 8-4-4-1-7 1-8 4z"/><path d="M32 18l3.5 7 7.5 1-5.5 5.2 1.4 7.6L32 35.3 25.1 38.8l1.4-7.6L21 26l7.5-1z" fill="currentColor" stroke="none"/></svg><h3 data-brush>Innovation in Oral Care</h3><p data-brush>Best New Device 2026</p></div>
+      <div class="award"><svg class="laurel" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 52C10 44 8 30 14 16M44 52c10-8 12-22 6-36"/><path d="M14 22c-4-1-6-4-6-7 4 0 6 3 6 7zM12 32c-4 0-7-3-7-6 4-.5 7 2 7 6zM14 42c-4 1-7-1-8-4 4-1 7 1 8 4zM50 22c4-1 6-4 6-7-4 0-6 3-6 7zM52 32c4 0 7-3 7-6-4-.5-7 2-7 6zM50 42c4 1 7-1 8-4-4-1-7 1-8 4z"/><path d="M32 18l3.5 7 7.5 1-5.5 5.2 1.4 7.6L32 35.3 25.1 38.8l1.4-7.6L21 26l7.5-1z" fill="currentColor" stroke="none"/></svg><h3 data-brush>Smart Home Gadget Awards</h3><p data-brush>Editor’s Choice 2026</p></div>
+      <div class="award"><svg class="laurel" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 52C10 44 8 30 14 16M44 52c10-8 12-22 6-36"/><path d="M14 22c-4-1-6-4-6-7 4 0 6 3 6 7zM12 32c-4 0-7-3-7-6 4-.5 7 2 7 6zM14 42c-4 1-7-1-8-4 4-1 7 1 8 4zM50 22c4-1 6-4 6-7-4 0-6 3-6 7zM52 32c4 0 7-3 7-6-4-.5-7 2-7 6zM50 42c4 1 7-1 8-4-4-1-7 1-8 4z"/><path d="M32 18l3.5 7 7.5 1-5.5 5.2 1.4 7.6L32 35.3 25.1 38.8l1.4-7.6L21 26l7.5-1z" fill="currentColor" stroke="none"/></svg><h3 data-brush>Sustainable Packaging Prize</h3><p data-brush>Winner 2026</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Glint</span>
+      <h2 data-brush>Your manual brush is quietly letting you down.</h2>
+      <p data-brush>You brush, you floss (sometimes), and you still hear “we’re seeing some buildup here.” That’s because a hand can’t do what a motor can. Here’s what changes.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12h3l3-8 4 16 3-8h7"/></svg></div>
+        <h3 data-brush>31,000 strokes a minute</h3>
+        <p data-brush>Your hand manages a few hundred. Glint breaks up plaque at the gumline, where bleeding and yellowing start, without you scrubbing your enamel raw.</p>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3 data-brush>A timer you can’t cheat</h3>
+        <p data-brush>Be honest, you brush for about 45 seconds. Glint pulses every 30 seconds, so every corner of your mouth gets its turn for the full two minutes.</p>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M10 8h4"/></svg></div>
+        <h3 data-brush>Charge it, then forget it</h3>
+        <p data-brush>90 days on one charge. No more dead brush on day two of your trip, and no charger hogging the sink.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2 data-brush>Three steps. Zero effort.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3 data-brush>Order in a minute</h3><p data-brush>Free shipping, at your door in two days. No dentist referral, no drugstore aisle.</p></div>
+      <div class="step"><h3 data-brush>Press one button</h3><p data-brush>No twelve confusing modes. Glint does the work and tells you when you’re done.</p></div>
+      <div class="step"><h3 data-brush>Never think about heads again</h3><p data-brush>A worn-out head spreads bacteria and barely cleans. Fresh ones arrive every three months, before you’d remember.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="packaging" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The packaging</span>
+      <h2 data-brush>No plastic clamshell. No scissors.</h2>
+      <p data-brush>Just a box you’ll want to keep, with everything you need already inside. Lift the lid and you’re brushing in a minute.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot"><img src="img/pk1-box.jpg" alt="The dark green Glint box with its lid lifted and the brush resting inside" loading="lazy" width="720" height="900"><figcaption><h3 data-brush>The box</h3><p data-brush>Matte card, magnetic lid, zero plastic.</p></figcaption></figure>
+      <figure class="shot"><img src="img/pk2-inside.jpg" alt="Everything in the Glint box laid out: brush, travel charging case, cable, two spare heads and a card" loading="lazy" width="720" height="900"><figcaption><h3 data-brush>What’s inside</h3><p data-brush>The brush, a travel charging case, a cable and two spare heads.</p></figcaption></figure>
+      <figure class="shot"><img src="img/pk3-mailer.jpg" alt="The flat Glint refill mailer with two spare heads, half through a letterbox" loading="lazy" width="720" height="900"><figcaption><h3 data-brush>The refill mailer</h3><p data-brush>Slides through your letterbox, so you don’t have to be home.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2 data-brush>Cheaper than one filling.</h2>
+      <p data-brush>One cavity can easily cost $150 or more. Glint costs $49 once, and it’s the last brush you’ll need to buy.</p>
+    </div>
+    <div class="pricing">
+      <div class="card plan">
+        <h3 data-brush>Just the brush</h3>
+        <p data-brush>For people who swear they’ll remember to buy new heads.</p>
+        <div class="price" data-brush>$49</div>
+        <ul>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-7M13 11l6-6M14 4l6 6M11 13l-2-2"/></svg><span data-brush>Glint sonic brush</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="3"/><path d="M8 8V6h8v2"/></svg><span data-brush>Travel charging case</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6l-1 12h-4L9 9z"/><path d="M9 6h6"/></svg><span data-brush>One brush head</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-brush>Two-year warranty</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9v.01M18 15v.01"/></svg><span data-brush>30-day money-back guarantee</span></li>
+        </ul>
+        <a href="#" class="btn btn-ghost"><span data-brush>Buy the brush</span></a>
       </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Glint</span>
+      <div class="card plan featured">
+        <span class="pill">Most popular</span>
+        <h3 data-brush style="margin-top:14px">The Glint Plan</h3>
+        <p data-brush>The brush, plus fresh heads every three months. You’ll never brush with a frayed, germy head again.</p>
+        <div class="price" data-brush>$49 <small>+ $6 / quarter</small></div>
+        <ul>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-7M13 11l6-6M14 4l6 6M11 13l-2-2"/></svg><span data-brush>Everything in Just the brush</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11A8 8 0 0 0 6 6L4 8M4 4v4h4M4 13a8 8 0 0 0 14 5l2-2M20 20v-4h-4"/></svg><span data-brush>New head delivered every 90 days</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9c-2.8 0-4 1.6-4 3s1.2 3 4 3c3.5 0 6.5-6 10-6 2.8 0 4 1.6 4 3s-1.2 3-4 3c-3.5 0-6.5-6-10-6z"/></svg><span data-brush>Lifetime warranty while subscribed</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg><span data-brush>Pause or cancel anytime</span></li>
+          <li><svg class="li-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><span data-brush>Free shipping, always</span></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Start my plan</a>
+      </div>
+    </div>
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true"><span>30</span>DAY</div>
+      <div>
+        <h3 data-brush>Try it for 30 days. Love it or it’s free.</h3>
+        <p data-brush>Use Glint for a month. If your mouth doesn’t feel cleaner than it has in years, send it back in any condition and we’ll refund every cent. No forms, no guilt trip.</p>
       </div>
     </div>
   </div>
+</section>
+
+<section class="block" id="community" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">#GlintGrin</span>
+      <h2 data-brush>One brush for the whole bathroom.</h2>
+      <p data-brush>Kids who hate brushing, grandparents with stiff hands, and anyone who loves coffee a little too much.</p>
+    </div>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/use-kid.jpg" alt="A girl smiling while brushing her teeth with Glint, her mom in the mirror behind her." loading="lazy" width="900" height="900"><figcaption data-brush>Mia, 7</figcaption></figure>
+      <figure class="thumb"><img src="img/use-grandma.jpg" alt="An older woman with silver hair brushing her teeth with Glint." loading="lazy" width="900" height="900"><figcaption data-brush>Dorothy, 78</figcaption></figure>
+      <figure class="thumb"><img src="img/use-coffee.jpg" alt="A man brushing his teeth with Glint while holding a cup of coffee." loading="lazy" width="900" height="900"><figcaption data-brush>Marcus, 34</figcaption></figure>
+      <figure class="thumb"><img src="img/use-morning.jpg" alt="A young woman smiling as she brushes her teeth with Glint in a sunny bathroom." loading="lazy" width="900" height="900"><figcaption data-brush>Ana, 26</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Reviews</span>
+      <h2 data-brush>18,000 people stopped dreading the dentist.</h2>
+    </div>
+    <div class="grid-3">
+      <figure class="card review" style="margin:0">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <blockquote data-brush>Bedtime brushing used to be a 20-minute battle. Now my kids race to the bathroom because Glint buzzes when they’re done. I’ll take it.</blockquote>
+        <figcaption class="who" data-brush>Priya, mom of two · Brooklyn</figcaption>
+      </figure>
+      <figure class="card review" style="margin:0">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <blockquote data-brush>At 78, with arthritis in both hands, I need a brush that does the work for me. Glint does. My dentist asked what on earth I’d changed.</blockquote>
+        <figcaption class="who" data-brush>Dorothy, 78 · Tucson</figcaption>
+      </figure>
+      <figure class="card review" style="margin:0">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <blockquote data-brush>Five espressos a day and I refuse to quit. Two weeks with Glint and the coffee stains were gone. My barista thinks I got veneers.</blockquote>
+        <figcaption class="who" data-brush>Marcus, self-confessed coffee-holic · Austin</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <span class="eyebrow">Free shipping · 30-day money-back guarantee</span>
+      <h2 data-brush>Make your next checkup the easy one.</h2>
+      <p data-brush>Start tonight. If it isn’t the best clean of your life within 30 days, you get every cent back.</p>
+      <a href="#pricing" class="btn btn-primary">Get Glint for $49</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-brush>© 2026 Glint Oral Care Co.</span>
+    <span data-brush>Made for people who floss, sometimes.</span>
+  </div>
 </footer>
 
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
+<!-- HUD -->
+<div class="hud" id="hud" role="group" aria-label="Brushing controls">
+  <span class="hud-label" id="hudLabel">Move to brush</span>
+  <span class="bar" aria-hidden="true"><i id="powerBar"></i></span>
+  <button class="btn btn-ghost" id="restain" type="button">☕ Re-stain</button>
+  <button class="btn btn-ghost clean-all" id="cleanAll" type="button">Clean all</button>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="brush" aria-hidden="true"><img src="img/brush-cursor.png" alt="" width="49" height="480"></div>
+
 <script>
-/* hero gallery: a thumbnail click swaps the large photograph */
-document.querySelectorAll('[data-gallery]').forEach(g => {
-  const main = g.querySelector('.gallery__main img');
-  g.querySelectorAll('.gallery__thumbs button').forEach(b => b.addEventListener('click', () => {
+document.querySelectorAll("[data-gallery]").forEach(g => {
+  const main = g.querySelector(".hero-main");
+  g.querySelectorAll(".gallery-thumbs button").forEach(b => b.addEventListener("click", () => {
     main.src = b.dataset.src; main.alt = b.dataset.alt;
-    g.querySelectorAll('.gallery__thumbs button').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+    g.querySelectorAll(".gallery-thumbs button").forEach(o => o.setAttribute("aria-pressed", String(o === b)));
   }));
 });
-
-/* the brush: stained copy, scrubbed clean; fast brushing whitens it */
 (() => {
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const BROWN = [120, 84, 22];
-  const chars = [];
-  const cv = document.createElement('canvas'); cv.width = cv.height = 1; const cx = cv.getContext('2d', { willReadFrequently: true });
-  const rgba = s => { cx.clearRect(0, 0, 1, 1); cx.fillStyle = '#000'; cx.fillStyle = s; cx.fillRect(0, 0, 1, 1); return Array.from(cx.getImageData(0, 0, 1, 1).data); };
-  const rgb = s => rgba(s).slice(0, 3);
-  const lum = c => (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255;
-  const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
-  const lin = v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
-  const L = c => .2126 * lin(c[0]) + .7152 * lin(c[1]) + .0722 * lin(c[2]);
-  const ratio = (a, b) => { const x = L(a), y = L(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
-  const groundOf = el => { for (let n = el; n; n = n.parentElement) { const b = getComputedStyle(n).backgroundColor; if (b && b !== 'transparent' && rgba(b)[3] > 250) return rgb(b); } return [203, 228, 242]; };
-  /* the stain never drops the text below a readable contrast: 7:1 where the clean text has it, else close to its own */
-  function stainFor(base, ground, dark, k) {
-    const target = dark ? [150, 108, 34] : [214, 182, 110], c0 = ratio(base, ground), need = 7.05;
-    if (c0 < need) return base;
-    for (let t = k; t > 0; t -= .02) { const c = mix(base, target, t); if (ratio(c, ground) >= need) return c; }
-    return base;
-  }
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll('[data-brush]').forEach(el => {
+  /* ---------------- split text into brushable characters ---------------- */
+  const STAINS = [[156, 124, 62], [138, 110, 58], [170, 142, 84], [124, 104, 72], [148, 128, 70]];
+  const CLEAN = [236, 231, 222];
+  const WHITE = [255, 255, 255];
+  const chars = [];
+
+  document.querySelectorAll("[data-brush]").forEach(el => {
+    const label = el.textContent.replace(/\s+/g, " ").trim();
     const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => {
-      const base = rgb(getComputedStyle(node.parentElement).color);
-      const dark = lum(base) < 0.5, ground = groundOf(node.parentElement);
       const frag = document.createDocumentFragment();
       node.textContent.split(/(\s+)/).forEach(part => {
         if (!part) return;
         if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-        const word = document.createElement('span'); word.className = 'w';
+        const word = document.createElement("span");
+        word.className = "w";
+        word.setAttribute("aria-hidden", "true");
         for (const c of part) {
-          const s = document.createElement('span'); s.textContent = c; word.appendChild(s);
-          const k = 0.55 + Math.random() * 0.25;
-          chars.push({ el: s, x: 0, y: 0, base, dark, stain: stainFor(base, ground, dark, k),
-                       clean: Math.random() * 0.2, shine: 0, dirty: true });
+          const s = document.createElement("span");
+          s.className = "ch";
+          s.textContent = c;
+          word.appendChild(s);
+          chars.push({
+            el: s, x: 0, y: 0,
+            clean: Math.random() * 0.2,
+            shine: 0,
+            stain: STAINS[(Math.random() * STAINS.length) | 0],
+            dirty: true,
+          });
         }
         frag.appendChild(word);
       });
       node.replaceWith(frag);
     });
+    const sr = document.createElement("span");
+    sr.className = "sr-only";
+    sr.textContent = label;
+    el.appendChild(sr);
   });
 
-  function paint(c) {
-    let col = mix(c.stain, c.base, c.clean);
-    col = mix(col, [255, 255, 255], c.shine);
-    const g = 1 - c.clean, sh = [];
-    if (g > 0.02) sh.push(`0 1px 3px rgba(${BROWN},${(g * 0.45).toFixed(2)})`);
-    if (c.shine > 0.02) {
-      if (c.dark) sh.push(`0 0 1.5px rgba(10,10,10,${(c.shine * 0.95).toFixed(2)})`, `0 1px 2px rgba(10,10,10,${(c.shine * 0.5).toFixed(2)})`);
-      sh.push(`0 0 ${(8 + c.shine * 10).toFixed(1)}px rgba(255,255,255,${(c.shine * 0.9).toFixed(2)})`);
+  function measure() {
+    const sx = scrollX, sy = scrollY;
+    for (const c of chars) {
+      const r = c.el.getBoundingClientRect();
+      c.x = r.left + r.width / 2 + sx;
+      c.y = r.top + r.height / 2 + sy;
+      c.h = r.height;
     }
-    c.el.style.color = `rgb(${col.map(v => v | 0)})`;
-    c.el.style.textShadow = sh.join(',') || 'none';
+  }
+
+  const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+
+  function paint(c) {
+    let col = mix(c.stain, CLEAN, c.clean);
+    col = mix(col, WHITE, c.shine);
+    const grime = (1 - c.clean);
+    const shadows = [];
+    if (grime > 0.02) shadows.push(`0 1px 4px rgba(92, 70, 24, ${(grime * 0.7).toFixed(2)})`);
+    if (c.shine > 0.02) {
+      shadows.push(`0 0 ${(6 + c.shine * 10).toFixed(1)}px rgba(255,255,255,${(c.shine * 0.85).toFixed(2)})`);
+      shadows.push(`0 0 ${(18 + c.shine * 18).toFixed(1)}px rgba(143,211,182,${(c.shine * 0.45).toFixed(2)})`);
+    }
+    c.el.style.color = `rgb(${col[0] | 0},${col[1] | 0},${col[2] | 0})`;
+    c.el.style.textShadow = shadows.join(",") || "none";
+    c.el.style.filter = grime > 0.5 ? `blur(${((grime - 0.5) * 0.9).toFixed(2)}px)` : "";
     c.dirty = false;
   }
   chars.forEach(paint);
 
-  function measure() {
-    for (const c of chars) {
-      const r = c.el.getBoundingClientRect();
-      c.x = r.left + r.width / 2 + scrollX; c.y = r.top + r.height / 2 + scrollY;
-    }
+  /* ---------------- brush cursor ---------------- */
+  const brush = document.getElementById("brush");
+  const brushSvg = brush.querySelector("img");
+  const BH = 118, NAT = { w: 49, h: 480 }, SCALE = BH / NAT.h;
+  const HOT = { x: 0.566 * NAT.w * SCALE, y: 0.069 * NAT.h * SCALE };        // centre of the bristles
+  brushSvg.style.width = NAT.w * SCALE + "px";
+  brushSvg.style.height = BH + "px";
+  brushSvg.style.left = -HOT.x + "px";
+  brushSvg.style.top = -HOT.y + "px";
+  brushSvg.style.transformOrigin = `${HOT.x}px ${HOT.y}px`;
+
+  const fx = document.getElementById("fx");
+  const ctx = fx.getContext("2d");
+  let dpr = 1;
+  function resize() {
+    dpr = Math.min(2, devicePixelRatio || 1);
+    fx.width = innerWidth * dpr; fx.height = innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    measure();
   }
 
-  const brush = document.getElementById('brush'), img = brush.querySelector('img');
-  const H = 118, S = H / 400, HOT = { x: 30 * S, y: 24 * S };
-  img.style.width = 61 * S + 'px'; img.style.height = H + 'px';
-  img.style.left = -HOT.x + 'px'; img.style.top = -HOT.y + 'px';
-  img.style.transformOrigin = `${HOT.x}px ${HOT.y}px`;
-
-  const fx = document.getElementById('fx'), ctx = fx.getContext('2d');
-  function resize() { const d = Math.min(2, devicePixelRatio || 1); fx.width = innerWidth * d; fx.height = innerHeight * d; ctx.setTransform(d, 0, 0, d, 0, 0); measure(); }
-
-  const p = { x: -999, y: -999, active: false, travel: 0, vx: 0 }; let lx = null, ly = null;
+  const pointer = { x: -999, y: -999, active: false, travel: 0, vx: 0 };
+  let lastX = null, lastY = null;
   function move(x, y) {
-    if (lx !== null) { p.travel += Math.hypot(x - lx, y - ly); p.vx += x - lx; }
-    lx = x; ly = y; p.x = x; p.y = y;
-    if (!p.active) { p.active = true; brush.classList.add('show'); document.documentElement.classList.add('brush-on'); }
+    if (lastX !== null) {
+      const dx = x - lastX, dy = y - lastY;
+      pointer.travel += Math.hypot(dx, dy);
+      pointer.vx += dx;
+    }
+    lastX = x; lastY = y;
+    pointer.x = x; pointer.y = y;
+    if (!pointer.active) { pointer.active = true; brush.classList.add("show"); document.documentElement.classList.add("brush-on"); }
   }
-  addEventListener('pointermove', e => move(e.clientX, e.clientY), { passive: true });
-  addEventListener('touchmove', e => { const t = e.touches[0]; if (t) move(t.clientX, t.clientY); }, { passive: true });
-  addEventListener('touchend', () => { lx = ly = null; });
-  document.addEventListener('pointerleave', () => { p.active = false; brush.classList.remove('show'); lx = ly = null; });
+  addEventListener("pointermove", e => move(e.clientX, e.clientY), { passive: true });
+  addEventListener("touchmove", e => { const t = e.touches[0]; if (t) move(t.clientX, t.clientY); }, { passive: true });
+  addEventListener("touchend", () => { lastX = lastY = null; });
+  document.addEventListener("pointerleave", () => { pointer.active = false; brush.classList.remove("show"); lastX = lastY = null; });
+  addEventListener("scroll", () => { /* positions are page-based; nothing to re-measure */ }, { passive: true });
 
+  /* ---------------- particles ---------------- */
   const parts = [];
-  function bubble(x, y) { if (!reduceMotion) parts.push({ k: 0, x: x + (Math.random() - .5) * 24, y: y + (Math.random() - .5) * 16, vx: (Math.random() - .5) * .05, vy: -.02 - Math.random() * .04, r: 2 + Math.random() * 4, life: 1, d: .0013 + Math.random() * .001 }); }
-  function spark(x, y) { if (!reduceMotion) parts.push({ k: 1, x: x + (Math.random() - .5) * 14, y: y + (Math.random() - .5) * 14, vx: 0, vy: -.01, r: 4 + Math.random() * 6, life: 1, d: .002 + Math.random() * .001, rot: Math.random() * 3 }); }
-  function draw(dt) {
+  function foam(x, y, n) {
+    if (reduceMotion) return;
+    for (let i = 0; i < n; i++) parts.push({
+      kind: "bubble", x: x + (Math.random() - 0.5) * 30, y: y + (Math.random() - 0.5) * 20,
+      vx: (Math.random() - 0.5) * 0.06, vy: -0.02 - Math.random() * 0.05,
+      r: 2 + Math.random() * 5, life: 1, decay: 0.0012 + Math.random() * 0.001,
+    });
+  }
+  function sparkle(x, y) {
+    if (reduceMotion) return;
+    parts.push({
+      kind: "spark", x: x + (Math.random() - 0.5) * 16, y: y + (Math.random() - 0.5) * 16,
+      vx: 0, vy: -0.01, r: 4 + Math.random() * 7, life: 1, decay: 0.0018 + Math.random() * 0.0012,
+      rot: Math.random() * Math.PI,
+    });
+  }
+  function drawParts(dt) {
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     for (let i = parts.length - 1; i >= 0; i--) {
-      const q = parts[i]; q.life -= q.d * dt; if (q.life <= 0) { parts.splice(i, 1); continue; }
-      q.x += q.vx * dt; q.y += q.vy * dt; const sx = q.x - scrollX, sy = q.y - scrollY;
-      ctx.globalAlpha = Math.min(1, q.life * 1.4);
-      if (!q.k) {
-        ctx.beginPath(); ctx.arc(sx, sy, q.r, 0, 7); ctx.fillStyle = 'rgba(255,255,255,.35)'; ctx.fill();
-        ctx.strokeStyle = 'rgba(68,96,110,.45)'; ctx.lineWidth = 1; ctx.stroke();
+      const p = parts[i];
+      p.life -= p.decay * dt;
+      if (p.life <= 0) { parts.splice(i, 1); continue; }
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      const sx = p.x - scrollX, sy = p.y - scrollY;
+      ctx.globalAlpha = Math.min(1, p.life * 1.4);
+      if (p.kind === "bubble") {
+        ctx.beginPath(); ctx.arc(sx, sy, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255,255,255,0.22)"; ctx.fill();
+        ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 1; ctx.stroke();
+        ctx.beginPath(); ctx.arc(sx - p.r * 0.35, sy - p.r * 0.35, p.r * 0.25, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff"; ctx.fill();
       } else {
-        const r = q.r * (.6 + .4 * Math.sin(q.life * Math.PI));
-        ctx.save(); ctx.translate(sx, sy); ctx.rotate(q.rot + (1 - q.life)); ctx.fillStyle = '#fff'; ctx.shadowColor = '#b0298f'; ctx.shadowBlur = 8;
-        ctx.beginPath(); for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2, rr = k % 2 ? r * .22 : r; ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); }
+        const r = p.r * (0.6 + 0.4 * Math.sin(p.life * Math.PI));
+        ctx.save(); ctx.translate(sx, sy); ctx.rotate(p.rot + (1 - p.life));
+        ctx.fillStyle = "#fff"; ctx.shadowColor = "#cdeedd"; ctx.shadowBlur = 10;
+        ctx.beginPath();
+        for (let k = 0; k < 8; k++) {
+          const a = (k / 8) * Math.PI * 2, rr = k % 2 ? r * 0.22 : r;
+          ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr);
+        }
         ctx.closePath(); ctx.fill(); ctx.restore();
       }
     }
     ctx.globalAlpha = 1;
   }
 
-  const R = 24, FAST = 2.0, bar = document.getElementById('powerBar'), label = document.getElementById('hudLabel');
-  let speed = 0, power = 0, wig = 0, last = performance.now();
+  /* ---------------- main loop ---------------- */
+  const R = 24;                 // brush reach in px
+  const FAST = 2.0;             // px per ms that counts as "too fast"
+  let speed = 0, power = 0, wiggle = 0, last = performance.now(), hudTick = 0;
+  const hud = document.getElementById("hud");
+  const hudLabel = document.getElementById("hudLabel");
+  const powerBar = document.getElementById("powerBar");
+  const shinePct = document.getElementById("shinePct");
+
   function frame(now) {
     const dt = Math.min(50, now - last); last = now;
-    speed += (p.travel / Math.max(dt, 1) - speed) * .25; p.travel = 0;
-    wig += (Math.max(-18, Math.min(18, p.vx * 1.4)) - wig) * .3; p.vx = 0;
-    if (p.active && speed > FAST) power = Math.min(1, power + dt * .0011);
-    else power = Math.max(0, power - dt * (speed > .4 ? .00035 : .0008));
-    brush.style.transform = `translate(${p.x}px, ${p.y}px)`;
-    const buzz = power > .35 && !reduceMotion ? (Math.random() - .5) * 6 * power : 0;
-    img.style.transform = `rotate(${-32 + wig + buzz}deg)`;
-    if (p.active && speed > .05) {
-      const px = p.x + scrollX, py = p.y + scrollY, scrub = Math.min(1.6, .35 + speed * .6); let hit = 0;
+
+    const raw = pointer.travel / Math.max(dt, 1);
+    pointer.travel = 0;
+    speed += (raw - speed) * 0.25;
+    wiggle += (Math.max(-18, Math.min(18, pointer.vx * 1.4)) - wiggle) * 0.3;
+    pointer.vx = 0;
+
+    // Sustained fast scrubbing charges "whitening power"; slowing down drains it.
+    if (pointer.active && speed > FAST) power = Math.min(1, power + dt * 0.0011);
+    else power = Math.max(0, power - dt * (speed > 0.4 ? 0.00035 : 0.0008));
+
+    brush.style.transform = `translate(${pointer.x}px, ${pointer.y}px)`;
+    const buzz = power > 0.35 && !reduceMotion ? (Math.random() - 0.5) * 6 * power : 0;
+    brushSvg.style.transform = `rotate(${-32 + wiggle + buzz}deg)`;
+
+    if (pointer.active && speed > 0.05) {
+      const px = pointer.x + scrollX, py = pointer.y + scrollY;
+      const scrub = Math.min(1.6, 0.35 + speed * 0.6);
+      let touched = 0;
       for (const c of chars) {
         const dx = c.x - px, dy = c.y - py;
         if (dx > R || dx < -R || dy > R || dy < -R) continue;
-        const d = Math.hypot(dx, dy); if (d > R) continue; const w = 1 - d / R;
-        if (c.clean < 1) { c.clean = Math.min(1, c.clean + w * dt * .0042 * scrub); c.dirty = true; hit++; }
-        if (power > .3 && c.clean > .55 && c.shine < 1) { c.shine = Math.min(1, c.shine + w * dt * .0045 * power); c.dirty = true; if (Math.random() < .02 * power) spark(c.x, c.y); }
+        const d = Math.hypot(dx, dy);
+        if (d > R) continue;
+        const w = 1 - d / R;
+        if (c.clean < 1) { c.clean = Math.min(1, c.clean + w * dt * 0.0042 * scrub); c.dirty = true; touched++; }
+        if (power > 0.3 && c.clean > 0.55 && c.shine < 1) {
+          c.shine = Math.min(1, c.shine + w * dt * 0.0045 * power);
+          c.dirty = true;
+          if (Math.random() < 0.02 * power) sparkle(c.x, c.y);
+        }
       }
-      if (hit && Math.random() < .5) bubble(px, py);
+      if (touched && Math.random() < 0.5) foam(px, py, 1 + (speed > 1 ? 1 : 0));
     }
+
     for (const c of chars) if (c.dirty) paint(c);
-    draw(dt);
-    bar.style.width = (power * 100).toFixed(1) + '%';
-    label.textContent = power > .3 ? 'Whitening mode' : speed > FAST * .6 ? 'Faster' : speed > .05 ? 'Scrubbing' : 'Move to brush';
+    drawParts(dt);
+
+    // HUD
+    powerBar.style.width = (power * 100).toFixed(1) + "%";
+    const hot = power > 0.3;
+    hud.classList.toggle("hot", hot);
+    hudLabel.textContent = hot ? "✦ WHITENING MODE ✦"
+      : speed > FAST * 0.6 ? "Faster… faster!"
+      : speed > 0.05 ? "Scrubbing…" : "Move to brush";
+
+    if ((hudTick += dt) > 250) {
+      hudTick = 0;
+      let sum = 0;
+      for (const c of chars) sum += c.clean * 0.8 + c.shine * 0.2;
+      shinePct.textContent = Math.round((sum / chars.length) * 100) + "%";
+    }
     requestAnimationFrame(frame);
   }
-  document.getElementById('restain').addEventListener('click', () => {
-    for (const c of chars) { c.clean = Math.min(c.clean, Math.random() * .2); c.shine = 0; c.dirty = true; }
+
+  /* ---------------- controls ---------------- */
+  document.getElementById("restain").addEventListener("click", () => {
+    for (const c of chars) {
+      c.clean = Math.min(c.clean, Math.random() * 0.25);
+      c.shine = 0;
+      c.stain = STAINS[(Math.random() * STAINS.length) | 0];
+      c.dirty = true;
+    }
   });
-  addEventListener('resize', resize);
-  if (document.fonts) document.fonts.ready.then(measure);
-  addEventListener('load', measure);
-  new ResizeObserver(measure).observe(document.body);
-  resize(); requestAnimationFrame(frame);
+  document.getElementById("cleanAll").addEventListener("click", () => {
+    for (const c of chars) { c.clean = 1; c.dirty = true; }
+  });
+
+  addEventListener("resize", resize);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  addEventListener("load", measure);
+  new ResizeObserver(() => measure()).observe(document.body);
+  resize();
+  requestAnimationFrame(frame);
 })();
 </script>
 </body>
