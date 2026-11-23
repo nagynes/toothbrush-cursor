@@ -1,11 +1,10 @@
 # toothbrush-cursor
 
-Landing page for **Glint**, a fictional D2C sonic toothbrush brand, where the cursor is a toothbrush.
+Landing page for **Glint**, a fictional D2C sonic toothbrush with a clear crystal handle. The cursor is a toothbrush.
 
-- All copy starts out stained (yellow-brown, slightly smudged).
-- Move the brush over text to scrub it clean — a stationary brush doesn't clean, you have to move it.
-- Keep moving fast and the **whitening power** meter charges up; while it's in whitening mode, brushed letters turn glowing super-white with sparkles. Slow down and the power drains.
-- Foam bubbles, a live "page shine" percentage, a ☕ **Re-stain** button and a **Clean all** button.
-- Works with touch; honours `prefers-reduced-motion` (no particles/buzz). Brushed text keeps a screen-reader copy.
+- All copy starts out stained. Brush over it to scrub it clean (you have to keep moving).
+- Brush fast for a while and the whitening meter in the nav fills up; in whitening mode the letters turn glowing white with sparkles. "Stain again" resets the page.
+- The hero is a photo gallery of the brush: click a thumbnail to swap the main photo.
+- Sections: the parts inside, people using it, a scroll story through the packaging, prices (with a 30-day money-back guarantee), reviews and awards.
 
-Single file, no build step: open `index.html` in a browser.
+Static files, no build step: open `index.html`. Photos are in `img/`; `assets/` holds the layout and motion kit the page uses.
