@@ -1,10 +1,9 @@
 # toothbrush-cursor
 
-Landing page for **Glint**, a fictional D2C sonic toothbrush. The cursor is a toothbrush.
+Landing page for **Glint**, a fictional whitening sonic toothbrush. The cursor is a toothbrush: run it over the stained copy to scrub it clean, and keep brushing fast to turn it pearly white.
 
-- All copy starts out stained. Brush over it to scrub it clean (you have to keep moving).
-- Keep brushing fast and the whitening power meter fills; in whitening mode letters turn glowing white with sparkles.
-- The hero is a photo gallery: click a thumbnail to swap the main photo.
-- Foam bubbles, a live "page shine" percentage, a ☕ Re-stain button and a Clean all button.
+Sections: hero, awards strip, what makes Glint different, five features (Liquid Pearl, cleaning, 100-day battery, refill heads, 30-day guarantee), before/after slider, cost comparison, how it works, FAQ, final CTA.
 
-Single file, no build step: open `index.html`. Photos are in `img/`.
+Placeholders to replace before launch: award logos, before/after customer photos and testimonial, professional whitening price, FAQ answers (verify), and the full return policy.
+
+Single file, no build step: open `index.html`. Images are in `img/`.
