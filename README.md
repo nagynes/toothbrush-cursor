@@ -4,6 +4,6 @@ Landing page for **Glint**, a fictional whitening sonic toothbrush. The cursor i
 
 Sections: hero, awards strip, what makes Glint different, five features (Liquid Pearl, cleaning, 100-day battery, refill heads, 30-day guarantee), before/after slider, cost comparison, how it works, FAQ.
 
-Placeholders to replace before launch: award logos, before/after customer photos and testimonial, professional whitening price, FAQ answers (verify), and the full return policy.
+Placeholders to replace before launch: award logos, the generated before/after photos and quote (use a real customer), professional whitening price, FAQ answers (verify), and the full return policy.
 
 Single file, no build step: open `index.html`. Images are in `img/`.

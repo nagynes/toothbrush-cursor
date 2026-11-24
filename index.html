@@ -10,21 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f4ef;            /* pearl white */
-    --bg-2: #fbf9f6;          /* warm off-white */
-    --ink: #1c1e21;
-    --muted: #5f6369;
-    --line: rgba(28, 30, 33, 0.10);
-    --mint: #3f8f70;
-    --pearl: linear-gradient(120deg, #fbe7ee 0%, #f6f1e6 30%, #e3f3f0 62%, #f3e9dc 100%);
-    --pearl-soft: linear-gradient(180deg, rgba(251,231,238,.55), rgba(227,243,240,.55));
+    --bg: #12201e;            /* dark green */
+    --bg-2: #182a27;
+    --card: #1b2f2b;
+    --ink: #ece7de;
+    --muted: #a3b1ab;
+    --line: rgba(236, 231, 222, 0.11);
+    --mint: #8fd3b6;
+    --mint-deep: #5fae8e;
+    --coral: #e9a48f;
+    --pearl: linear-gradient(135deg, #8fd3b6, #5fae8e);
+    --pearl-soft: rgba(143, 211, 182, 0.08);
     --radius: 24px;
     --display: "Bricolage Grotesque", system-ui, sans-serif;
     --body: "Inter", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { margin: 0; background: radial-gradient(1200px 600px at 85% -10%, rgba(143,211,182,.10), transparent 60%), radial-gradient(900px 500px at -10% 30%, rgba(233,164,143,.06), transparent 60%), var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   @media (pointer: fine) { html.brush-on, html.brush-on * { cursor: none !important; } }
   a { color: inherit; }
   img { display: block; max-width: 100%; height: auto; }
@@ -39,8 +42,8 @@
   .sub { font-size: clamp(18px, 1.5vw, 21px); color: var(--muted); max-width: 44ch; }
 
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 600 17px/1 var(--body); padding: 19px 30px; border-radius: 999px; text-decoration: none;
-    background: var(--ink); color: #fff; border: 0; transition: transform .2s, box-shadow .2s; box-shadow: 0 10px 30px rgba(28,30,33,.18); }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(28,30,33,.24); }
+    background: var(--mint); color: #0e211b; border: 0; transition: transform .2s, box-shadow .2s, background .2s; box-shadow: 0 10px 30px rgba(143,211,182,.18); }
+  .btn:hover { transform: translateY(-2px); background: #a9e0c8; box-shadow: 0 16px 36px rgba(143,211,182,.28); }
   .btn:active { transform: translateY(0); }
   .btn svg { width: 18px; height: 18px; }
   .btn-sm { padding: 12px 20px; font-size: 15px; box-shadow: none; }
@@ -48,10 +51,10 @@
   .trust svg { width: 30px; height: 30px; flex: none; }
 
   /* nav */
-  nav.top { position: sticky; top: 0; z-index: 20; background: rgba(247, 244, 239, .88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  nav.top { position: sticky; top: 0; z-index: 20; background: rgba(18, 32, 30, .86); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
   nav.top .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
   .logo { font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-  .logo i { width: 24px; height: 24px; border-radius: 8px; background: var(--pearl); box-shadow: inset 0 0 0 1px var(--line); display: grid; place-items: center; font-style: normal; font-size: 13px; }
+  .logo i { width: 24px; height: 24px; border-radius: 8px; background: var(--pearl); box-shadow: inset 0 0 0 1px var(--line); display: grid; place-items: center; font-style: normal; font-size: 13px; color: #0e211b; }
   .nav-links { display: flex; gap: 24px; font-size: 15px; color: var(--muted); }
   .nav-links a { text-decoration: none; }
   .nav-links a:hover { color: var(--ink); }
@@ -69,10 +72,10 @@
   .proof { border-block: 1px solid var(--line); padding: 40px 0; background: var(--bg-2); }
   .proof h2 { font-size: clamp(20px, 2vw, 26px); font-weight: 700; letter-spacing: -0.02em; text-align: center; max-width: 34ch; margin: 0 auto 28px; }
   .logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
-  .logo-mark { display: flex; align-items: center; gap: 10px; padding: 8px 32px; color: #85898e; }
+  .logo-mark { display: flex; align-items: center; gap: 10px; padding: 8px 32px; color: #8a9a94; }
   .logo-mark + .logo-mark { border-left: 1px solid var(--line); }
   .logo-mark svg { width: 30px; height: 30px; flex: none; }
-  .logo-mark b { display: block; font: 700 15px/1.15 var(--display); letter-spacing: -0.01em; color: #6a6e73; }
+  .logo-mark b { display: block; font: 700 15px/1.15 var(--display); letter-spacing: -0.01em; color: #b5c2bc; }
   .logo-mark span { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
   section.block { padding: 112px 0; }
@@ -85,10 +88,10 @@
   .vs-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .6s; }
   .vs-card:hover img { transform: scale(1.02); }
   .vs-label { position: absolute; left: 20px; bottom: 20px; right: 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px;
-    padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.86); backdrop-filter: blur(8px); font-weight: 600; }
+    padding: 14px 18px; border-radius: 16px; background: rgba(18,32,30,.82); backdrop-filter: blur(8px); font-weight: 600; }
   .vs-label small { font-weight: 500; color: var(--muted); font-size: 14px; }
-  .vs-card.glint .vs-label { background: rgba(255,255,255,.92); box-shadow: 0 10px 30px rgba(196,170,200,.3); }
-  .vs-card.glint .vs-label small { color: var(--ink); font-weight: 600; }
+  .vs-card.glint .vs-label { background: rgba(18,32,30,.86); box-shadow: inset 0 0 0 1px rgba(143,211,182,.5), 0 10px 30px rgba(143,211,182,.15); }
+  .vs-card.glint .vs-label small { color: var(--mint); font-weight: 600; }
 
   /* 4. features */
   .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 56px 0; }
@@ -100,45 +103,45 @@
   .f-art { position: relative; }
   .f-art > img { width: 100%; border-radius: var(--radius); }
   .chips { position: absolute; left: 18px; bottom: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
-  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,.92); border: 1px solid var(--line); font-size: 14px; font-weight: 500; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(18,32,30,.86); border: 1px solid var(--line); font-size: 14px; font-weight: 500; }
   .chip svg { width: 18px; height: 18px; color: var(--mint); }
   .days { position: absolute; left: 7%; top: 7%; font: 800 clamp(72px, 10vw, 140px)/.82 var(--display); letter-spacing: -0.05em; color: var(--ink); }
   .days small { display: block; font-size: .3em; letter-spacing: .04em; margin-top: 10px; }
   .battery { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
   .battery svg { width: 44px; height: 22px; }
   .heads-labels { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; margin: 14px 6% 0; font-size: 13px; font-weight: 600; color: var(--muted); }
-  .heads-labels span::before { content: ""; display: block; width: 1px; height: 12px; background: rgba(28,30,33,.2); margin: 0 auto 6px; }
-  .attach { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #fff; border: 1px solid var(--line); font-size: 14px; color: var(--muted); max-width: 380px; }
+  .heads-labels span::before { content: ""; display: block; width: 1px; height: 12px; background: rgba(236,231,222,.25); margin: 0 auto 6px; }
+  .attach { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); font-size: 14px; color: var(--muted); max-width: 380px; }
   .attach svg { width: 56px; height: 56px; flex: none; color: var(--ink); }
   .thirty { display: grid; place-items: center; min-height: 460px; }
-  .thirty .seal { position: relative; width: min(100%, 400px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; overflow: hidden; background: var(--pearl); box-shadow: inset 0 0 0 1px rgba(255,255,255,.9), 0 30px 80px rgba(200,180,200,.3); }
+  .thirty .seal { position: relative; width: min(100%, 400px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 35% 30%, #24423c, #172b27 70%); box-shadow: inset 0 0 0 1px rgba(143,211,182,.35), 0 30px 80px rgba(143,211,182,.12); }
   .thirty .seal b { font: 800 clamp(120px, 15vw, 200px)/.8 var(--display); letter-spacing: -0.06em; }
   .thirty .seal svg { position: absolute; inset: 5%; width: 90%; height: 90%; animation: spin 40s linear infinite; }
-  .thirty img { position: absolute; right: -4%; bottom: -6%; width: 48%; border-radius: 20px; box-shadow: 0 20px 50px rgba(28,30,33,.15); }
+  .thirty img { position: absolute; right: -4%; bottom: -6%; width: 48%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,.4); }
   @keyframes spin { to { transform: rotate(360deg); } }
   .policy { font-size: 14px; color: var(--muted); text-underline-offset: 3px; }
 
   /* 5. before and after */
   .ba { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 8; user-select: none; touch-action: pan-y; cursor: ew-resize; }
   .ba-pane { position: absolute; inset: 0; display: grid; place-items: center; }
-  .ba-pane.before { padding-right: 50%; background: linear-gradient(135deg, #e5ddcf, #d8cfc0); }
-  .ba-pane.after { padding-left: 50%; background: linear-gradient(135deg, #f6f3ee, #ece8e2); clip-path: inset(0 0 0 var(--pos, 50%)); }
+  .ba-pane img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .ba-pane.after { clip-path: inset(0 0 0 var(--pos, 50%)); }
   .ba-slot { text-align: center; color: #8b8378; font-size: 15px; display: grid; gap: 10px; justify-items: center; }
   .ba-slot svg { width: 64px; height: 64px; opacity: .55; }
-  .ba-tag { position: absolute; top: 20px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.9); font-size: 13px; font-weight: 600; }
+  .ba-tag { position: absolute; top: 20px; z-index: 2; padding: 8px 14px; border-radius: 999px; background: rgba(18,32,30,.85); font-size: 13px; font-weight: 600; }
   .ba-tag.l { left: 20px; } .ba-tag.r { right: 20px; }
   .ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 2px; background: #fff; transform: translateX(-1px); }
-  .ba-handle button { position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.18); display: grid; place-items: center; cursor: ew-resize; }
+  .ba-handle button { position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; border: 0; background: #ece7de; color: #12201e; box-shadow: 0 8px 24px rgba(0,0,0,.35); display: grid; place-items: center; cursor: ew-resize; }
   .ba-handle button svg { width: 24px; height: 24px; }
   .ba-quote { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-top: 24px; color: var(--muted); font-size: 15px; }
   .ba-quote blockquote { margin: 0; font-size: 20px; color: var(--ink); max-width: 46ch; }
 
   /* 6. cost table */
-  .compare { border-radius: 28px; background: #fff; border: 1px solid var(--line); overflow-x: auto; }
+  .compare { border-radius: 28px; background: var(--card); border: 1px solid var(--line); overflow-x: auto; }
   .compare table { min-width: 640px; }
   .compare table { width: 100%; border-collapse: collapse; }
   .compare th, .compare td { padding: 20px 24px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
-  .compare thead th { font: 700 18px var(--display); letter-spacing: -0.01em; padding-top: 28px; border-bottom-color: rgba(28,30,33,.16); }
+  .compare thead th { font: 700 18px var(--display); letter-spacing: -0.01em; padding-top: 28px; border-bottom-color: rgba(236,231,222,.18); }
   .compare th[scope=row] { font-weight: 500; width: 31%; }
   .compare .g { background: var(--pearl-soft); text-align: center; width: 23%; font-weight: 600; }
   .compare .n { text-align: center; color: var(--muted); width: 23%; }
@@ -146,23 +149,23 @@
   .compare td.p { display: table-cell; }
   .cell { display: inline-flex; align-items: center; gap: 8px; }
   .ok, .no { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; }
-  .ok { background: var(--ink); color: #fff; } .no { background: #efebe5; color: #8f8a83; }
+  .ok { background: var(--mint); color: #0e211b; } .no { background: rgba(236,231,222,.08); color: #7f8d88; }
   .ok svg, .no svg { width: 18px; height: 18px; }
-  .compare tr.checkups th, .compare tr.checkups td { border-bottom: 0; background: #fff2f5; font-weight: 800; }
-  .compare tr.checkups td { color: #a83a63; letter-spacing: .02em; }
+  .compare tr.checkups th, .compare tr.checkups td { border-bottom: 0; background: rgba(233,164,143,.10); font-weight: 800; }
+  .compare tr.checkups td { color: #f0a58f; letter-spacing: .02em; }
   .compare tr.checkups th span { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
-  .compare tr.checkups svg { width: 20px; height: 20px; color: #d9577f; animation: beat 1.6s ease-in-out infinite; }
+  .compare tr.checkups svg { width: 20px; height: 20px; color: #e9a48f; animation: beat 1.6s ease-in-out infinite; }
   @keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } }
   .table-cta { display: flex; justify-content: center; margin-top: 40px; }
 
   /* 7. how it works */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: s; }
-  .step { position: relative; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); overflow: hidden; margin: 0; animation: stepglow 6s infinite; }
+  .step { position: relative; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); overflow: hidden; margin: 0; animation: stepglow 6s infinite; }
   .step:nth-child(2) { animation-delay: 2s; } .step:nth-child(3) { animation-delay: 4s; }
-  @keyframes stepglow { 0%, 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); transform: none; } 8%, 28% { box-shadow: 0 0 0 2px #ecd6e2, 0 20px 40px rgba(28,30,33,.08); transform: translateY(-4px); } 36% { box-shadow: 0 0 0 0 rgba(0,0,0,0); transform: none; } }
+  @keyframes stepglow { 0%, 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); transform: none; } 8%, 28% { box-shadow: 0 0 0 2px rgba(143,211,182,.55), 0 20px 40px rgba(0,0,0,.3); transform: translateY(-4px); } 36% { box-shadow: 0 0 0 0 rgba(0,0,0,0); transform: none; } }
   .step img { width: 100%; aspect-ratio: 1; object-fit: cover; }
   .step figcaption { display: flex; align-items: center; gap: 12px; padding: 18px 20px; font-weight: 600; }
-  .step figcaption::before { counter-increment: s; content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font: 700 15px var(--display); }
+  .step figcaption::before { counter-increment: s; content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--mint); color: #0e211b; font: 700 15px var(--display); }
 
   /* 8. FAQ */
   .faq-block { background: var(--bg-2); border-block: 1px solid var(--line); }
@@ -184,7 +187,7 @@
   /* brush cursor */
   #brush { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; width: 0; height: 0; opacity: 0; transition: opacity .2s; }
   #brush.show { opacity: 1; }
-  #brush img { position: absolute; display: block; max-width: none; filter: drop-shadow(0 6px 10px rgba(28,30,33,.35)) drop-shadow(0 0 1px rgba(28,30,33,.6)); }
+  #brush img { position: absolute; display: block; max-width: none; filter: drop-shadow(0 6px 12px rgba(0,0,0,.5)); }
   #fx { position: fixed; inset: 0; z-index: 99; pointer-events: none; }
 
   @media (max-width: 900px) {
@@ -237,11 +240,11 @@
       <p class="sub" data-brush>Designed by a former Google engineer and a former NASA engineer, Glint is engineered to make your teeth whiter in as little as 14 days.</p>
     </div>
     <div class="hero-art">
-      <img src="img/hero.jpg" alt="The Glint toothbrush floating against a pearl-white background, iridescent liquid swirling around its head" width="1120" height="1400" fetchpriority="high">
+      <img src="img/hero.jpg" alt="The Glint toothbrush floating on a dark green background, a ribbon of pearly liquid swirling around its head" width="1120" height="1400" fetchpriority="high">
     </div>
     <div class="hero-cta">
       <a href="#cost" class="btn">I want whiter teeth <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <span class="trust"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.5" stroke="#c9c3ba" stroke-width="1.2"/><path d="M16 6.5l8 3v5.5c0 5-3.4 8.4-8 9.8-4.6-1.4-8-4.8-8-9.8V9.5z" fill="#e3f3f0" stroke="#3f8f70" stroke-width="1.4"/><path d="M12.5 15.8l2.4 2.4 4.6-4.6" stroke="#3f8f70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-brush>30-day money-back guarantee.</span></span>
+      <span class="trust"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.5" stroke="rgba(236,231,222,.3)" stroke-width="1.2"/><path d="M16 6.5l8 3v5.5c0 5-3.4 8.4-8 9.8-4.6-1.4-8-4.8-8-9.8V9.5z" fill="rgba(143,211,182,.15)" stroke="#8fd3b6" stroke-width="1.4"/><path d="M12.5 15.8l2.4 2.4 4.6-4.6" stroke="#8fd3b6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-brush>30-day money-back guarantee.</span></span>
     </div>
   </div>
 </header>
@@ -274,7 +277,7 @@
         <figcaption class="vs-label"><span>Ordinary toothbrush</span><small>Designed to clean</small></figcaption>
       </figure>
       <figure class="vs-card glint">
-        <img src="img/vs-glint.jpg" alt="Glint standing on a glowing pearl-white background with soft light and liquid ribbons" width="1120" height="1400" loading="lazy">
+        <img src="img/vs-glint.jpg" alt="Glint standing in a soft mint glow with ribbons of pearly light around it" width="1120" height="1400" loading="lazy">
         <figcaption class="vs-label"><span>Glint</span><small>Designed to clean + whiten</small></figcaption>
       </figure>
     </div>
@@ -300,7 +303,7 @@
         <p data-brush>Glint does everything you’d expect from a great toothbrush. It cleans your teeth, tackles plaque, and keeps your mouth fresh. We just made whitening its specialty.</p>
       </div>
       <div class="f-art">
-        <img src="img/brushing.jpg" alt="A woman brushing her teeth with Glint, holding its pearl handle" width="1400" height="1045" loading="lazy">
+        <img src="img/brushing.jpg" alt="A woman brushing her teeth with Glint, holding its green handle" width="1400" height="1045" loading="lazy">
         <div class="chips">
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>Cleans</span>
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg>Tackles plaque</span>
@@ -314,10 +317,10 @@
         <span class="f-num">03</span>
         <h3 data-brush>100 days of brushing on one charge.</h3>
         <p data-brush>Because the last thing you need is another device begging to be plugged in.</p>
-        <span class="battery"><svg viewBox="0 0 44 22" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><rect x="40" y="7" width="3" height="8" rx="1.5" fill="currentColor"/><rect x="4" y="4" width="31" height="14" rx="3" fill="#3f8f70"/></svg>Nearly full, still</span>
+        <span class="battery"><svg viewBox="0 0 44 22" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><rect x="40" y="7" width="3" height="8" rx="1.5" fill="currentColor"/><rect x="4" y="4" width="31" height="14" rx="3" fill="#8fd3b6"/></svg>Nearly full, still</span>
       </div>
       <div class="f-art">
-        <img src="img/counter.jpg" alt="Glint standing on its gold base on a marble bathroom counter, no charging cable" width="1120" height="1400" loading="lazy">
+        <img src="img/counter.jpg" alt="Glint standing on its base on a dark green marble counter, no charging cable" width="1120" height="1400" loading="lazy">
         <div class="days" aria-hidden="true">100<small>DAYS</small></div>
       </div>
     </div>
@@ -327,10 +330,10 @@
         <span class="f-num">04</span>
         <h3 data-brush>Get a head. Or four.</h3>
         <p data-brush>Refill whenever you feel like it. Each Glint head holds enough Liquid Pearl for 30 days of brushing, twice a day. Get one or stock up on four.</p>
-        <div class="attach"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="25" y="3" width="14" height="22" rx="6"/><path d="M28 8h8M28 12h8"/><path d="M32 28v8M28 32l4 4 4-4" stroke="#3f8f70"/><rect x="30" y="40" width="4" height="7" rx="1"/><rect x="24" y="47" width="16" height="15" rx="6"/></svg><span>Line the head up with the shaft and press down until it clicks.</span></div>
+        <div class="attach"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="25" y="3" width="14" height="22" rx="6"/><path d="M28 8h8M28 12h8"/><path d="M32 28v8M28 32l4 4 4-4" stroke="#8fd3b6"/><rect x="30" y="40" width="4" height="7" rx="1"/><rect x="24" y="47" width="16" height="15" rx="6"/></svg><span>Line the head up with the shaft and press down until it clicks.</span></div>
       </div>
       <div class="f-art">
-        <img src="img/heads.jpg" alt="Four Glint replacement heads lined up on a pearl-white background" width="1400" height="792" loading="lazy">
+        <img src="img/heads.jpg" alt="Four green Glint replacement heads lined up in a row" width="1400" height="792" loading="lazy">
         <div class="heads-labels" aria-hidden="true"><span>30 days</span><span>30 days</span><span>30 days</span><span>30 days</span></div>
       </div>
     </div>
@@ -344,29 +347,29 @@
       </div>
       <div class="f-art thirty">
         <div class="seal"><b aria-hidden="true">30</b>
-          <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring" d="M100 100 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0"/></defs><text font-family="Inter, sans-serif" font-size="11.5" font-weight="600" letter-spacing="3.4" fill="#5f6369"><textPath href="#ring">30-DAY MONEY-BACK GUARANTEE · LOVE IT OR RETURN IT · </textPath></text></svg>
+          <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring" d="M100 100 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0"/></defs><text font-family="Inter, sans-serif" font-size="11.5" font-weight="600" letter-spacing="3.4" fill="#8fd3b6"><textPath href="#ring">30-DAY MONEY-BACK GUARANTEE · LOVE IT OR RETURN IT · </textPath></text></svg>
         </div>
-        <img src="img/guarantee.jpg" alt="Glint resting in its open pearl-white presentation box" width="1400" height="1045" loading="lazy">
+        <img src="img/guarantee.jpg" alt="Glint resting in its open deep-green presentation box" width="1400" height="1045" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
 <!-- SECTION 5 — BEFORE & AFTER
-     Both panes are slots for one genuine customer's before and after photos: same light, no retouching.
-     Add their verified quote, name or initials and how long they brushed. -->
+     These photos and the quote are generated stand-ins. Replace them with one genuine customer's
+     before and after photos (same light, no retouching), their verified quote and initials before launch. -->
 <section class="block" id="results" style="padding-top:0" aria-labelledby="results-h">
   <div class="wrap">
     <div class="head center"><h2 id="results-h" data-brush>Never be shy to smile again.</h2></div>
     <div class="ba" data-ba style="--pos: 50%">
-      <div class="ba-pane before"><div class="ba-slot"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="12" width="52" height="40" rx="6"/><circle cx="22" cy="26" r="5"/><path d="M6 44l16-12 12 9 8-6 16 12"/></svg>Customer photo: before</div></div>
-      <div class="ba-pane after"><div class="ba-slot"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="12" width="52" height="40" rx="6"/><circle cx="22" cy="26" r="5"/><path d="M6 44l16-12 12 9 8-6 16 12"/></svg>Customer photo: after</div></div>
+      <div class="ba-pane before"><img src="img/before.jpg" alt="Close-up of a smile with yellowed, coffee-stained teeth before using Glint" width="1400" height="788" draggable="false"></div>
+      <div class="ba-pane after"><img src="img/after.jpg" alt="The same smile with noticeably whiter teeth after using Glint" width="1400" height="788" draggable="false"></div>
       <span class="ba-tag l">Before Glint</span><span class="ba-tag r">After Glint</span>
       <div class="ba-handle"><button type="button" role="slider" aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></button></div>
     </div>
     <div class="ba-quote">
-      <blockquote>Verified customer testimonial goes here.</blockquote>
-      <span>Customer initials · Verified buyer · Used Glint for 14 days</span>
+      <blockquote>“I drink three coffees a day and had stopped smiling in photos. Two weeks in, I don’t think about it anymore.”</blockquote>
+      <span>Example result for illustration · 14 days of twice-daily brushing</span>
     </div>
   </div>
 </section>
@@ -405,7 +408,7 @@
       <p class="sub" data-brush>We spent a lot of time engineering Glint so you wouldn’t have to spend any extra time using it. Just brush twice a day as directed, and let the technology fit into your routine.</p>
     </div>
     <div class="steps">
-      <figure class="step"><img src="img/step-attach.jpg" alt="Hands pressing a fresh Liquid Pearl head onto the Glint handle" width="1024" height="1024" loading="lazy"><figcaption><span data-brush>Click on a Liquid Pearl head.</span></figcaption></figure>
+      <figure class="step"><img src="img/step-attach.jpg" alt="One hand lowering a fresh Liquid Pearl head onto the bare shaft of the Glint handle" width="1024" height="1024" loading="lazy"><figcaption><span data-brush>Click on a Liquid Pearl head.</span></figcaption></figure>
       <figure class="step"><img src="img/step-brush.jpg" alt="A man brushing his teeth with Glint" width="1024" height="1024" loading="lazy"><figcaption><span data-brush>Brush twice a day.</span></figcaption></figure>
       <figure class="step"><img src="img/step-smile.jpg" alt="The same man smiling in the mirror after brushing" width="1024" height="1024" loading="lazy"><figcaption><span data-brush>Smile.</span></figcaption></figure>
     </div>
@@ -440,7 +443,7 @@
 </footer>
 
 <canvas id="fx" aria-hidden="true"></canvas>
-<div id="brush" aria-hidden="true"><img src="img/brush-cursor.png" alt="" width="92" height="480"></div>
+<div id="brush" aria-hidden="true"><img src="img/brush-cursor.png" alt="" width="95" height="480"></div>
 
 <script>
 /* before / after slider */
@@ -455,7 +458,7 @@ document.querySelectorAll('[data-ba]').forEach(box => {
   knob.addEventListener('keydown', e => { const v = +knob.getAttribute('aria-valuenow'); if (e.key === 'ArrowLeft') set(v - 5); if (e.key === 'ArrowRight') set(v + 5); });
 });
 
-/* the brush: stained copy, scrubbed clean; keep brushing fast and it turns pearly white */
+/* the brush: stained copy, scrubbed clean; keep brushing fast and it turns bright white */
 (() => {
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const cv = document.createElement('canvas'); cv.width = cv.height = 1; const cx = cv.getContext('2d', { willReadFrequently: true });
@@ -490,8 +493,7 @@ document.querySelectorAll('[data-ba]').forEach(box => {
     const g = 1 - c.clean, sh = [];
     if (g > 0.02) sh.push(`0 1px 3px rgba(120,84,22,${(g * 0.45).toFixed(2)})`);
     if (c.shine > 0.02) {
-      if (c.dark) sh.push(`0 0 1.5px rgba(28,30,33,${(c.shine * 0.9).toFixed(2)})`);
-      sh.push(`0 0 ${(6 + c.shine * 8).toFixed(1)}px rgba(240,190,212,${(c.shine * 0.9).toFixed(2)})`, `0 0 ${(14 + c.shine * 14).toFixed(1)}px rgba(160,222,214,${(c.shine * 0.8).toFixed(2)})`);
+      sh.push(`0 0 ${(6 + c.shine * 10).toFixed(1)}px rgba(255,255,255,${(c.shine * 0.9).toFixed(2)})`, `0 0 ${(18 + c.shine * 18).toFixed(1)}px rgba(143,211,182,${(c.shine * 0.5).toFixed(2)})`);
     }
     c.el.style.color = `rgb(${col.map(v => v | 0)})`;
     c.el.style.textShadow = sh.join(',') || 'none';
@@ -501,7 +503,7 @@ document.querySelectorAll('[data-ba]').forEach(box => {
   function measure() { for (const c of chars) { const r = c.el.getBoundingClientRect(); c.x = r.left + r.width / 2 + scrollX; c.y = r.top + r.height / 2 + scrollY; } }
 
   const brush = document.getElementById('brush'), img = brush.querySelector('img');
-  const BH = 112, NAT = { w: 92, h: 480 }, S = BH / NAT.h, HOT = { x: 0.763 * NAT.w * S, y: 0.055 * NAT.h * S };
+  const BH = 112, NAT = { w: 95, h: 480 }, S = BH / NAT.h, HOT = { x: 0.741 * NAT.w * S, y: 0.055 * NAT.h * S };
   img.style.width = NAT.w * S + 'px'; img.style.height = BH + 'px'; img.style.left = -HOT.x + 'px'; img.style.top = -HOT.y + 'px'; img.style.transformOrigin = `${HOT.x}px ${HOT.y}px`;
 
   const fx = document.getElementById('fx'), ctx = fx.getContext('2d');
@@ -527,10 +529,10 @@ document.querySelectorAll('[data-ba]').forEach(box => {
       const q = parts[i]; q.life -= q.d * dt; if (q.life <= 0) { parts.splice(i, 1); continue; }
       q.x += q.vx * dt; q.y += q.vy * dt; const sx = q.x - scrollX, sy = q.y - scrollY;
       ctx.globalAlpha = Math.min(1, q.life * 1.4);
-      if (!q.k) { ctx.beginPath(); ctx.arc(sx, sy, q.r, 0, 7); ctx.fillStyle = 'rgba(255,255,255,.7)'; ctx.fill(); ctx.strokeStyle = 'rgba(95,99,105,.35)'; ctx.lineWidth = 1; ctx.stroke(); }
+      if (!q.k) { ctx.beginPath(); ctx.arc(sx, sy, q.r, 0, 7); ctx.fillStyle = 'rgba(255,255,255,.22)'; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,.7)'; ctx.lineWidth = 1; ctx.stroke(); }
       else {
         const r = q.r * (.6 + .4 * Math.sin(q.life * Math.PI));
-        ctx.save(); ctx.translate(sx, sy); ctx.rotate(q.rot + (1 - q.life)); ctx.fillStyle = '#fff'; ctx.shadowColor = '#e9b7cb'; ctx.shadowBlur = 10;
+        ctx.save(); ctx.translate(sx, sy); ctx.rotate(q.rot + (1 - q.life)); ctx.fillStyle = '#fff'; ctx.shadowColor = '#bfffe8'; ctx.shadowBlur = 10;
         ctx.beginPath(); for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2, rr = k % 2 ? r * .22 : r; ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); }
         ctx.closePath(); ctx.fill(); ctx.restore();
       }
