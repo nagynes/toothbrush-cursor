@@ -7,3 +7,5 @@ Sections: hero, awards strip, what makes Glint different, five features (Liquid 
 Placeholders to replace before launch: award logos, the generated before/after photos and quote (use a real customer), professional whitening price, FAQ answers (verify), and the full return policy.
 
 Single file, no build step: open `index.html`. Images are in `img/`.
+
+A 9:16 social video of the brushing cursor is in `media/glint-whitening-cursor.mp4` (re-render with `scripts/record-social.js`).

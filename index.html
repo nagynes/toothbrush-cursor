@@ -479,7 +479,7 @@ document.querySelectorAll('[data-ba]').forEach(box => {
         const word = document.createElement('span'); word.className = 'w';
         for (const c of part) {
           const s = document.createElement('span'); s.textContent = c; word.appendChild(s);
-          chars.push({ el: s, x: 0, y: 0, base, dark, stain: mix(base, [176, 132, 52], 0.55 + Math.random() * 0.25), clean: Math.random() * 0.2, shine: 0, dirty: true });
+          chars.push({ el: s, x: 0, y: 0, base, dark, stain: dark ? mix(base, [176, 132, 52], 0.55 + Math.random() * 0.25) : mix(base, [204, 150, 40], 0.68 + Math.random() * 0.2), clean: Math.random() * 0.2, shine: 0, dirty: true });
         }
         frag.appendChild(word);
       });
