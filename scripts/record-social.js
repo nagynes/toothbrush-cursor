@@ -20,6 +20,18 @@ fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive:
   await p.evaluate(() => document.fonts.ready);
   await p.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; document.querySelectorAll('img').forEach(i => i.loading = 'eager'); });
   await p.waitForTimeout(1500);
+  // TikTok-style caption over the recording (video only, not part of the site)
+  await p.evaluate(() => {
+    const st = document.createElement('style');
+    st.textContent = `
+      #ttcap { position: fixed; left: 0; right: 0; top: 47%; z-index: 300; display: flex; justify-content: center; padding: 0 30px; pointer-events: none; }
+      #ttcap p { margin: 0; max-width: 330px; text-align: center; font: 700 21px/1.62 Inter, sans-serif; letter-spacing: -0.01em; }
+      #ttcap span { background: #fff; color: #000; padding: 5px 10px; border-radius: 7px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }`;
+    document.head.appendChild(st);
+    const d = document.createElement('div'); d.id = 'ttcap';
+    d.innerHTML = '<p><span>I made a D2C toothbrush landing page that lets you brush away stained typography</span></p>';
+    document.body.appendChild(d);
+  });
   await p.waitForTimeout(500);
 
   // geometry of the headline lines
